@@ -3,8 +3,9 @@ nvm node版本的管理的工具
 --------------------------
     前提是需要删除 自己之前装的node全局的版本   nvm list  nvm use 版本号  ok
     window版本需要自己下载 https://github.com/coreybutler/nvm-windows 
- webpack2 dll 的方案 注意静态服务的static的 位置
+ webpack2 dll 的方案 注意静态服务的static的 位置 
 -------------------------- 
+       1:假如使用了 koa2  那就koa-static 中的server的方法 因为他会自动有个静态服务器
        dll 两个地方  第三方的库   hmr 热更新  全部弄成就可以了 图片的形式 自己看吧 上传了
      test: /\.(js|jsx)$/,  
           exclude: /node_modules/,
