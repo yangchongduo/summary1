@@ -5,10 +5,9 @@ nvm node版本的管理的工具
     window版本需要自己下载 https://github.com/coreybutler/nvm-windows 
  webpack2 dll 的方案 注意静态服务的static的 位置
 -------------------------- 
-       dll 两个地方  第三方的库   hmr 热更新  全部弄成就可以了  稍后会贴出代码
+       dll 两个地方  第三方的库   hmr 热更新  全部弄成就可以了 图片的形式 自己看吧 上传了
      test: /\.(js|jsx)$/,  
-          exclude: /node_modules/,  
-          //loaders: [ 'happypack/loader' ],  
+          exclude: /node_modules/,
           loader: 'babel',  
           options: {  
             cacheDirectory: true,//这个影响是非常大的  
