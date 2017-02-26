@@ -21,7 +21,8 @@ CSRF 攻击 和 加密
 
       https://feclub.cn/post/content/koa-grace-csrf     
     csrf node中间层 有 var uid = require('uid-safe') 生成秘钥      
-     2:又秘钥生成token 全部放在 cookie里面 客户端从cookie获取token，返回进行验证     
+     2:又秘钥生成token 全部放在 cookie里面 客户端从cookie获取token，返回进行验证   
+     
      let secret = tokens.secretSync();          
     this.cookies.set(options.cookie_key, secret, {  
        maxAge: options.timeout,  
