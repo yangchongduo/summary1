@@ -15,10 +15,24 @@ nvm node版本的管理的工具
      dll 方案是一个非常好的方案  能够很大程度上减少构建的速度  主要是路径问题  
      (https://gold.xitu.io/entry/5769f8dc128fe10057d2f4ae)  
      (https://segmentfault.com/a/1190000007104372)
-   
-token的概念 现在都说crsf 攻击 和 加密
+  
+CSRF 攻击 和 加密
 -----------------
-    xxxxx
+      https://feclub.cn/post/content/koa-grace-csrf 
+    csrf node中间层 有 var uid = require('uid-safe') 生成秘钥   
+     2:又秘钥生成token 全部放在 cookie里面 客户端从cookie获取token，返回进行验证  
+     let secret = tokens.secretSync();  
+    this.cookies.set(options.cookie_key, secret, {  
+      maxAge: options.timeout,  
+      httpOnly: true  
+    });
+    // cookie_token: 当前token的的content，不需要httpOnly  
+    let newToken = tokens.create(secret);  
+    this.cookies.set(options.cookie_token, newToken, {  
+      maxAge: options.timeout,  
+      httpOnly: false  
+    })  
+      
 模板引擎的原理
 ------------------------------
     利用reg进行匹配     var matcher = /<%=([\s\S]+?)%>|<%([\s\S]+?)%>|$/g;然后更换数据就可以了 
