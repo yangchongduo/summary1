@@ -1,12 +1,11 @@
-本文旨在加深对前端知识点的理解，资料来源于网络，由本人（博客：http://segmentfault.com/u/trigkit4）收集整理。
+
 nvm node版本的管理的工具 
 --------------------------
     前提是需要删除 自己之前装的node全局的版本   nvm list  nvm use 版本号  ok  
     window版本需要自己下载 https://github.com/coreybutler/nvm-windows 
  webpack2 dll 的方案 注意静态服务的static的 位置 
 -------------------------- 
-      代码以后再说   
-      其实我不想骂人  但是我忍不住 他妹的 为什么我重新下载了一个文件 在弄了一次就好了 为什么？？？？？？？   
+      代码以后再说     
        dll 两个地方  第三方的库   hmr 热更新  全部弄成就可以了 图片的形式 自己看吧 上传了
      test: /\.(js|jsx)$/,  
           exclude: /node_modules/,
