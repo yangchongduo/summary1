@@ -6,12 +6,13 @@ nvm node版本的管理的工具
  webpack2 dll 的方案 注意静态服务的static的 位置 
 -------------------------- 
       代码以后再说     
-       dll 两个地方  第三方的库   hmr 热更新  全部弄成就可以了 图片的形式 自己看吧 上传了
-     test: /\.(js|jsx)$/,  
-          exclude: /node_modules/,
-          loader: 'babel',  
-          options: {  
-            cacheDirectory: true,//这个影响是非常大的  
+       dll 两个地方  1：第三方的库   2：hmr 热更新  图片的形式 自己看吧 上传了
+       
+          test: /\.(js|jsx)$/,  
+               exclude: /node_modules/,
+               loader: 'babel',  
+               options: {  
+                 cacheDirectory: true,//这个影响是非常大的  
      dll 方案是一个非常好的方案  能够很大程度上减少构建的速度  主要是路径问题  
      (https://gold.xitu.io/entry/5769f8dc128fe10057d2f4ae)  
      (https://segmentfault.com/a/1190000007104372)
