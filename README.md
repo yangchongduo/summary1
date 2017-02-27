@@ -1,3 +1,16 @@
+webpack循循渐进
+        一个典型的应用程序会使用第三方框架、工具库。这些库一般使用特定的版本并且其代码不经常改变。然而，应用本身的代码会频繁改变。
+把第三方代码和应用本身的代码一起打包是非常低效的。因为浏览器会根据缓存头来缓存资源文件，如果文件没有被改变，
+文件将会被缓存从而不用去再次请求 cdn。为了利用这一特性，我们希望不管应用本身的代码如何改变，vendor 文件的 hash 始终恒定不变。
+     1:提出css 是为了能够异步加载css 否则的话 css会打包在js里面
+     2:开发环境最好是使用统一的hash [name].[hash].js 最好没有
+     3:生产环境推荐使用不同的hash [name].[thunkhash].js //这样在版本发布的时候，不变的第三方库就不会重新拉去
+     走浏览器的魂缓存，这点是非常有必要的
+     需要三部 1:vendor 需要 提出，2:manifest webpack 需要完成运行的一些代码，需要提出。3:mian.[thunkhash].js
+     这样代码发生变化的时候hash就不变了 这是多入口文件
+     假如使用dll的时候就不用了 dll本身就不需要打包
+     (https://doc.webpack-china.org/guides/caching/#-)
+     (https://github.com/selfRepositoryAll/webpack2)
 
 nvm node版本的管理的工具 
 --------------------------
