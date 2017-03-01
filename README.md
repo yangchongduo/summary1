@@ -801,8 +801,10 @@ javascript继承的6种方法
 详情：[JavaScript继承方式详解][9]
 ajax过程
 ------
-
-    (1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.
+     
+     (0) 第三个参数一般是fasle 是 同步 
+     
+    (1)创建XMLHttpRequest对象,也就是创建一个异步调用对象.
     
     (2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息.
     
