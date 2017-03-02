@@ -1,4 +1,15 @@
-阿里的十字路口   哈哈 桥接模式 可以考虑一下 有空再弄
+写出今天是星期几
+-----------------------------
+
+          var a = new Array("日", "一", "二", "三", "四", "五", "六");  
+          var week = new Date().getDay();  
+          var str = "今天是星期"+ a[week];  
+          alert(str);  
+         var str = "今天是星期" + "日一二三四五六".charAt(new Date().getDay());alert(str);  
+
+
+
+十字路口  观察者模式可以做很多事情 桥接模式 可以考虑一下 有空再弄
 ------------------
      class Event {
     constructor() {
