@@ -1,11 +1,13 @@
 ####es6 prxoy（外部到内容的修改）  decorate（从外部一层一层的修饰）不适用继承的方式
 --------------------------------
+
           1：抽离校验模块 3. 访问日志 预警和拦截  过滤操作  
           场景: 拦截 给出提示， get obj={name:xx}, get age 没有一般是 undefined 可以throw error   
                                 set 年龄 设置 对数据的检测 age='string' 这是no的   
                                vue 使用 proxy 对数据拦截 给出提示   
                                https://segmentfault.com/a/1190000008303003  
-                               http://pinggod.com/2016/%E5%AE%9E%E4%BE%8B%E8%A7%A3%E6%9E%90-ES6-Proxy-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/  
+                               http://pinggod.com/2016/%E5%AE%9E%E4%BE%8B%E8%A7%A3%E6%9E%90-ES6-Proxy-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/
+                               
            业务场景 : 对一个id 请求一次 缓存 ，然后 代理对象 请求过 不在请求 从缓存中获取  
            假设你想要阻止任何人删除属性 noDelete, 想要让那些调用 oldMethod 的用户知道它已经被弃用了, 还想要阻止任何人修改 doNotChange 属性。下面             就是一种快速的实现办法。  
            ES7 中实现的 Decorator，相当于设计模式中的装饰器模式。如果简单地区分 Proxy 和 Decorator 的使用场景，可以概括为：Proxy 的核心作用是控                制外界对被代理者内部的访问，Decorator 的核心作用是增强被装饰者的功能。只要在它们核心的使用场景上做好区别，那么像是访问日志这样的功                  能，虽然本文使用了 Proxy 实现，但也可以使用 Decorator 实现，  
