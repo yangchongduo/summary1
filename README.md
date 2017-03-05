@@ -1,3 +1,57 @@
+#### 桥接模式  一个类只应该只有一个影响它的变化因素
+------------------------------------
+              class baseSdk {
+                  constructor() {
+                      //不需要继承任何类 所以不需要super()
+                  }
+                  setLogin(user) {
+                      //user 是C_Login的实例 有个私有的属性name
+
+                      const {name, login} = user
+
+                      login(name)
+                  }
+                  setCreate() {
+                      console.log()
+                  }
+              }
+              // 不是sdk的业务就需要 抽象变量
+              class baseLogin {
+                  login(user) {
+                      console.log(`那个谁sdk,我是${user}登录了,你注意了`)
+                  }
+              }
+              class baseCreate {
+
+              }
+              //c 部门开始使用示例
+              class C_Login extends baseLogin {
+                  constructor() {
+                      super()
+                      this.name = 'xxxxxx'
+                  }
+              }
+              class C_Ceate extends baseCreate {
+                  constructor() {
+                      super()
+                  }
+              }
+              //B 
+              class B_Login extends baseLogin {
+                  constructor() {
+                      super()
+                      this.name = 'bbbbbb'
+                  }
+              }
+              // 自动程序
+              runSdk = () => {
+                  let sdk = new baseSdk()
+                  sdk.setLogin(new C_Login())
+                  sdk.setLogin(new B_Login())
+
+              }
+              runSdk()
+
 #### vscode 代码调试
 --------------------------
                     {
