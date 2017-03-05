@@ -1,3 +1,39 @@
+#### vscode 代码调试
+--------------------------
+                    {
+                     "name": "使用本机 Chrome 调试",
+                     "type": "chrome",
+                     "request": "launch",
+                      "file": "${workspaceRoot}/index.html",
+                 //  "url": "http://mysite.com/index.html", //使用外部服务器时,请注释掉 file, 改用 url, 并将 useBuildInServer 设置为 false "http://mysite.com/index.html
+                     "runtimeExecutable": "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe", // 改成您的 Chrome 安装路径
+                     "sourceMaps": true,
+                     "webRoot": "${workspaceRoot}",
+                 //  "preLaunchTask":"build",
+                     "userDataDir":"${tmpdir}",
+                     "port":5433
+                 },
+                    {
+                     "name": "nodeLauch", //单独调试js，即可以直接运行js
+                     "type": "node",
+                     "request": "launch",
+                     "program": "${workspaceRoot}\\src\\ycd.js", //这个配置成你要调试的文件、${file}当前打开的文件
+                     "stopOnEntry": false,
+                     "args": [],
+                     "cwd": "${workspaceRoot}",
+                     "runtimeExecutable": null,
+                     "runtimeArgs": [
+                         "--nolazy"
+                     ],
+                     "env": {
+                         "NODE_ENV": "development"
+                     },
+                     "console": "internalConsole",
+                     "preLaunchTask": "",
+                     "sourceMaps": false
+                 },
+
+
 ####es6 prxoy（外部到内容的修改）  decorate（从外部一层一层的修饰）不适用继承的方式
 --------------------------------
 
