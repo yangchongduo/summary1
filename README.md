@@ -1,3 +1,15 @@
+#### decorate   babel-node 运行 **.js即可  先全局安装 npm i babel-cli -g
+--------------------------------
+        只能decoreat 类或者类的方法 不能单独装饰 一个函数
+        场景 aop: 日志 angular2 
+         @ 到底做了什么？
+         //@decorator
+             class A {}
+
+             // 等同于
+
+             class A {}
+             A = decorator(A) || A;
 #### 在angular的项目下如何增加react 或者vue的项目呢？
 -----------------------
               在原angular代码不变的情况下，我们完全可以跳转一个新页面不就可以了 哈哈 简单吧 其实就是两个项目
