@@ -11,7 +11,6 @@
              class A {}
              A = decorator(A) || A;
              
-       ```   
                        function testable(target) {  
                        // console.log(target);  
                         target.isTestable = true;  
@@ -35,7 +34,7 @@
                       }  
                       const math=new MyTestableClass()  
                       math.add(1,3)  
-       ```
+     
              
              
 #### 在angular的项目下如何增加react 或者vue的项目呢？
