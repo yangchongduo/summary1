@@ -10,7 +10,7 @@
 
              class A {}
              A = decorator(A) || A;
-       ```
+       ```   
                              function testable(target) {  
                        // console.log(target);  
                         target.isTestable = true;  
