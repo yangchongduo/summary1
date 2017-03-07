@@ -10,6 +10,33 @@
 
              class A {}
              A = decorator(A) || A;
+       ```
+                             function testable(target) {
+                       // console.log(target);
+                        target.isTestable = true;
+                      }
+                      function log(target, name, descriptor) {
+                       var oldValue = descriptor.value;
+                      // 把函数的主体给改了
+                        descriptor.value = function() {
+                          console.log(`Calling "${name}" with`, arguments);
+                          return oldValue.apply(null, arguments);
+                        };
+                        return descriptor
+                      }
+                      @testable
+                      class MyTestableClass {
+
+                        @log
+                        add(a, b) {
+                          return a + b
+                        }
+                      }
+                      const math=new MyTestableClass()
+                      math.add(1,3)
+       ```
+             
+             
 #### 在angular的项目下如何增加react 或者vue的项目呢？
 -----------------------
               在原angular代码不变的情况下，我们完全可以跳转一个新页面不就可以了 哈哈 简单吧 其实就是两个项目
