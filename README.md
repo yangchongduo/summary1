@@ -6,7 +6,7 @@
             samuelebistoletti/docker-statsd-influxdb-grafana       
           3：docker port samuelebistoletti/docker-statsd-influxdb-grafana    
           4：boot2docker ip     
-          https://www.v2ex.com/t/328124#reply3     
+          (https://www.v2ex.com/t/328124#reply3)     
           
 #### decorate   babel-node 运行 **.js即可  先全局安装 npm i babel-cli -g
 --------------------------------
