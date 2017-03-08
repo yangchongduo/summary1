@@ -1,3 +1,13 @@
+#### docker沙箱机制  pm2 提供了pm2-docker 
+--------------------------  
+         Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。  
+        1.docker run -d -P training/webapp   
+          2： docker run -d  -p 3003:3003   -p 3004:8083   -p 8086:8086   -p 22022:22   -p 8125:8125/udp     
+            samuelebistoletti/docker-statsd-influxdb-grafana       
+          3：docker port samuelebistoletti/docker-statsd-influxdb-grafana    
+          4：boot2docker ip     
+          https://www.v2ex.com/t/328124#reply3     
+          
 #### decorate   babel-node 运行 **.js即可  先全局安装 npm i babel-cli -g
 --------------------------------
         只能decoreat 类或者类的方法 不能单独装饰 一个函数
