@@ -21,4 +21,25 @@
            值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，  
            保存的只是一个指针，const只能保证这个指针是固定的，至于它指向的数据结构是不是可变的，就完全不能控制了。  
            因此，将一个对象声明为常量必须非常小心  
-           
+
+##### setTimeOut模拟异步 只是 setTimeOUT不好用
+-------------------------------
+                var func = function (params) {
+                    return new Promise((resolve) => {
+                      setTimeout(function (params) {
+                        resolve('xxxxx')
+                      }, 5000);
+                    })
+                  }
+                  for (let i = 0; i < 10; i++) {
+                    console.log('i', i);
+                    (async function (params) {
+                     var res= await func().then((res)=>{
+                       console.log('res',res);
+                       return res
+                     })
+                      console.log('outerRes',res);
+                      console.log('--------------');
+                      console.log('0000000000000');
+                    })()
+                  }
