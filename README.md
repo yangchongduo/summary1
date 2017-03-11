@@ -1,3 +1,20 @@
+#### ab测压 ApacheBench   ab -c 5000 -n 600 http://127.0.0.1/index.php
+-------------------------------
+                  http://www.ha97.com/4617.html          http://www.cnblogs.com/xiaoyaowuming/p/5622660.html    
+                  D:\httpd-2.4.25-x64-vc14-r1\Apache24\bin    
+                  1：安装之后 请到 安装文件夹下面  使用cmd 执行命令 （bash 是不好用的）   
+                  页面  
+                  node 中间层  
+                  ab  -n 600     Requests per second:    265.71 [#/sec] (mean)  
+                  ab  -n 1000    Requests per second:    331.88 [#/sec] (mean)   
+                  ab  -n 1500   Requests per second:    337.97 [#/sec] (mean) 
+                  纯java  
+                   ab  -n 600      Requests per second:    326.96 [#/sec] (mean)  
+                  ab  -n 1500   Requests per second:    347.77 [#/sec] (mean)  
+                  api 接口  
+                  接口  是大量返回数据的 所以肯定是  qps 肯定低  
+                  Total transferred:        77611764 bytes  
+                   HTML transferred:         77314200 bytes  
 #### docker沙箱机制  pm2 提供了pm2-docker 
 --------------------------  
          Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。  
