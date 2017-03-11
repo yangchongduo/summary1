@@ -2,19 +2,19 @@
 -------------------------------
                   http://www.ha97.com/4617.html          http://www.cnblogs.com/xiaoyaowuming/p/5622660.html    
                   D:\httpd-2.4.25-x64-vc14-r1\Apache24\bin    
-                  1：安装之后 请到 安装文件夹下面  使用cmd 执行命令 （bash 是不好用的）   
-                  页面      
-                  node 中间层     
-                  ab  -n 600       Requests per second:    265.71 [#/sec]    
-                  ab  -n 1000     Requests per second:    331.88 [#/sec]      
-                  ab  -n 1500    Requests per second:    337.97 [#/sec]     
-                  纯java  
-                   ab  -n 600      Requests per second:    326.96 [#/sec]  
-                  ab  -n 1500     Requests per second:    347.77 [#/sec]   
-                  api 接口    
-                  接口  是大量返回数据的 所以肯定是  qps 肯定低    
-                    Total transferred:        77611764 bytes    
-                     HTML transferred:         77314200 bytes   
+                      1：安装之后 请到 安装文件夹下面  使用cmd 执行命令 （bash 是不好用的）   
+                      页面      
+                      node 中间层     
+                      ab  -n 600       Requests per second:    265.71 [#/sec]    
+                      ab  -n 1000     Requests per second:    331.88 [#/sec]      
+                      ab  -n 1500    Requests per second:    337.97 [#/sec]     
+                      纯java    
+                       ab  -n 600      Requests per second:    326.96 [#/sec]  
+                       ab  -n 1500     Requests per second:    347.77 [#/sec]   
+                      api 接口    
+                       接口  是大量返回数据的 所以肯定是  qps 肯定低    
+                        Total transferred:        77611764 bytes    
+                         HTML transferred:         77314200 bytes   
                    
                    
                    
