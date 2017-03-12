@@ -5,7 +5,12 @@
               属性是由架构中的约束所导致的，约束往往是由在架构元素的某个方面   
               应用软件工程原则  来驱动的    
               http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF   
-          
+
+#### 维护进程的一些指令
+--------------------------------
+            powershell  ps 是查看所有的进程
+             kill id
+             
 #### ab测压 ApacheBench   ab -c 5000 -n 600 http://127.0.0.1/index.php
 -------------------------------
                   http://www.ha97.com/4617.html          http://www.cnblogs.com/xiaoyaowuming/p/5622660.html    
