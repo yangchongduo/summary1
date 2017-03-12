@@ -1,4 +1,12 @@
-#### ab测压 ApacheBench   ab -c 5000 -n 600 http://127.0.0.1/index.php
+#### 架构  13种属性 5种大风格 21种具体实例的架构风格 
+-----------------------------
+              我们将按照架构属性来对架构风格进行评估    
+              架构风格是一组协作的架构约束  
+              属性是由架构中的约束所导致的，约束往往是由在架构元素的某个方面   
+              应用软件工程原则  来驱动的    
+              http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF   
+          
+#### ab测压 ApacheBench   ab -c 5000 -n 600 http://127.0.0.1/index.php
 -------------------------------
                   http://www.ha97.com/4617.html          http://www.cnblogs.com/xiaoyaowuming/p/5622660.html    
                   D:\httpd-2.4.25-x64-vc14-r1\Apache24\bin    
