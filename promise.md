@@ -1,6 +1,6 @@
 // promise then  总结一点 就是  异步必须使用 promise 包裹起来 只有这样才可以
 -----------------------------------------------
-                    ### then的方式去处理异步
+                    ### then的方式去处理异步    
                      var fs = require('fs');
                 var read = new Promise((resolve, reject) => {
                     fs.readFile('./note.txt', 'utf-8', function (err, data) {
@@ -15,7 +15,7 @@
                         }, 5000)
                     })
                 };
-                // 请注意 read 和write的写法 有不同
+                // 请注意 read 和write的写法 有不同   
                 var write = (res) => {
                     return new Promise((resolve) => {
                         fs.writeFile('./ycd.txt', res, (err) => {
@@ -35,7 +35,7 @@
                     console.log(res)
                 })
 
-                    ####结合async  和await 去操作
+                    ####结合async  和await 去操作    
                            var fn=function () {
                       return new  Promise((resolve,reject)=>{
                           // 这边处理异步的
@@ -58,7 +58,7 @@
                           })
                       })
                   };
-                  // 这个就可以改写了 不用执行  直接是 promise 最好
+                  // 这个就可以改写了 不用执行  直接是 promise 最好   
                   var promise2=()=>{
                       return new Promise((resolve)=>{
                           fs.readFile('./note.txt','utf-8',(err,data)=>{
@@ -79,7 +79,7 @@
                       console.log(array[0])
                   });
                   //--------------------------------------------------------------------
-                  ### 请注意 read 和write的写法的不同
+                  ### 请注意 read 和write的写法的不同   
                   var fs=require('fs')
                   var fn=new Promise((resolve,resject)=>{
                      resolve()
