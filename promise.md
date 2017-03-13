@@ -25,7 +25,7 @@
                         resolve('写成功了')
                     })
                 }
-                var promise = new Promise((resolve, reject) => {
+   ```             var promise = new Promise((resolve, reject) => {
 
                 });
                 fn().then((res) => {
