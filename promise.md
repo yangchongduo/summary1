@@ -2,20 +2,20 @@
 -----------------------------------------------
                    // ### then的方式去处理异步  
                    
-  ```        var fs = require('fs');
-                var read = new Promise((resolve, reject) => {
-                    fs.readFile('./note.txt', 'utf-8', function (err, data) {
-                        // console.log(data)
-                        resolve(data)
-                    })
-                });
-                var fn = function () {
-                    return new Promise((resolve) => {
-                        setTimeout(() => {
-                            resolve('xxxxx')
-                        }, 5000)
-                    })
-                };
+            ```        var fs = require('fs');
+                          var read = new Promise((resolve, reject) => {
+                              fs.readFile('./note.txt', 'utf-8', function (err, data) {
+                                  // console.log(data)
+                                  resolve(data)
+                              })
+                          });
+                          var fn = function () {
+                              return new Promise((resolve) => {
+                                  setTimeout(() => {
+                                      resolve('xxxxx')
+                                  }, 5000)
+                              })
+                          };
                 // 请注意 read 和write的写法 有不同   
                 var write = (res) => {
                     return new Promise((resolve) => {
