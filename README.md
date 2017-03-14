@@ -1,3 +1,11 @@
+#### git
+----------------------------
+            git add README.md
+            git commit -m "first commit"
+            git remote add origin https://github.com/yangchongduo/xxx.git
+            git push -u origin master
+
+
 #### 架构  13种属性 5种大风格 21种具体实例的架构风格 
 -----------------------------
               我们将按照架构属性来对架构风格进行评估    
