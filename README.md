@@ -7,10 +7,10 @@
               http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF  
               
 ####link的通用的reg
-----------------------------·
-            ```
+----------------------------
+           
                 var  link_reg=/(<link(?:.*?))href=[\"\'](.+?)[\"\']((?!<)(?:.*)\>)(?:[\n\r\s]*?)(?:<\/link>)*/gm;
-            ```
+            
         
 #### 维护进程的一些指令
 --------------------------------
