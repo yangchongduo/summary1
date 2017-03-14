@@ -4,8 +4,14 @@
               架构风格是一组协作的架构约束  
               属性是由架构中的约束所导致的，约束往往是由在架构元素的某个方面   
               应用软件工程原则  来驱动的    
-              http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF   
-
+              http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF  
+              
+####link的通用的reg
+----------------------------·
+            ```
+                var  link_reg=/(<link(?:.*?))href=[\"\'](.+?)[\"\']((?!<)(?:.*)\>)(?:[\n\r\s]*?)(?:<\/link>)*/gm;
+            ```
+        
 #### 维护进程的一些指令
 --------------------------------
             powershell  ps 是查看所有的进程
