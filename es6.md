@@ -14,7 +14,7 @@
                       }
              重点 let块级作用域的目的:块级作用域的出现，实际上使得获得广泛应用的立即执行函数表达式（IIFE）不再必要了。
            ```
-#####const 常量 不想再次被赋值 但是内部属性是可以再次赋值的   不变的内存的地址
+##### const 常量 不想再次被赋值 但是内部属性是可以再次赋值的   不变的内存的地址
 -----------------------------------
 
            const实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址不得改动。对于简单类型的数据（数值、字符串、布尔值），  
@@ -43,3 +43,26 @@
                       console.log('0000000000000');
                     })()
                   }
+#### test
+```
+                var func = function (params) {
+                    return new Promise((resolve) => {
+                      setTimeout(function (params) {
+                        resolve('xxxxx')
+                      }, 5000);
+                    })
+                  }
+                  for (let i = 0; i < 10; i++) {
+                    console.log('i', i);
+                    (async function (params) {
+                     var res= await func().then((res)=>{
+                       console.log('res',res);
+                       return res
+                     })
+                      console.log('outerRes',res);
+                      console.log('--------------');
+                      console.log('0000000000000');
+                    })()
+                  }
+
+```
