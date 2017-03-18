@@ -197,6 +197,32 @@
                       1：抽离校验模块 3. 访问日志 预警和拦截  过滤操作    
                       场景: 拦截 给出提示， get obj={name:xx}, get age 没有一般是 undefined 可以throw error   
                                 set 年龄 设置 对数据的检测 age='string' 这是no的   
+                                var obj={
+                                        _api:'xxx',
+                                        getUser:(arguments)=>{
+                                            //console.log('arguments',arguments)
+                                            //console.log('xxxxx')
+                                        }
+                                    };
+                                    var logAsync=(date,fnName,arguments)=>{
+                                        setTimeout(()=>{
+                                            console.log(`${date} run ${fnName}，'${arguments}`)
+                                        })
+                                    };
+                                    // 请注意必须这么写
+                                    obj=new Proxy(obj,{
+                                        get(target,key,proxy){
+                                          //  console.log(proxy)
+                                            var value=target[key];
+                                           // console.log(value=proxy)
+                                            return function(...arguments){
+                                                logAsync(Date.now(),key,arguments)
+                                                Reflect.apply(value,target,arguments)
+                                            }
+                                        }
+                                    });
+                                    obj.getUser('I am arguments')
+
                                vue 使用 proxy 对数据拦截 给出提示   
                                https://segmentfault.com/a/1190000008303003  
                                http://pinggod.com/2016/%E5%AE%9E%E4%BE%8B%E8%A7%A3%E6%9E%90-ES6-Proxy-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/
