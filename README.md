@@ -56,8 +56,12 @@
           4：boot2docker ip     
           (https://www.v2ex.com/t/328124#reply3)     
           
-#### decorate   babel-node 运行 **.js即可  先全局安装 npm i babel-cli -g
+#### decorate   babel-node 运行 **.js即可  先全局安装 npm i babel-cli -g   .babelrc   "plugins": ["transform-decorators-legacy"]
+
 --------------------------------
+
+              "babel-cli": "^6.23.0",  
+          "babel-plugin-transform-decorators-legacy": "^1.3.4",  
         只能decoreat 类或者类的方法 不能单独装饰 一个函数
         场景 aop: 日志 angular2 
          @ 到底做了什么？
