@@ -6,8 +6,7 @@
             2：var命令会发生”变量提升“现象 let不会
             ES6明确规定，如果区块中存在let和const命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。
             凡是在声明之前就使用这些变量，就会报错。
-                      var tmp = 123;
-
+                      var tmp = 123;;
                       if (true) {
                         tmp = 'abc'; // ReferenceError
                         let tmp;
