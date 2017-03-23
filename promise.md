@@ -172,17 +172,6 @@ const sleep = (timeountMS) => new Promise((resolve, reject) => {
     await sleep(1000);
     console.log(Date.now(), i)
 })()
-
-
-
-
-
-```
-
-
-
-
-
 ```
 
 
