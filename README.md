@@ -77,7 +77,8 @@ mv -u // 文件夹下所有的文件  单个文件不需要
                    
 #### docker沙箱机制  pm2 提供了pm2-docker 
 --------------------------  
-         Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。  
+           日志：log4 和pm2 专门的处理日志的方案
+         Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。  : 
         1.docker run -d -P training/webapp   
           2： docker run -d  -p 3003:3003   -p 3004:8083   -p 8086:8086   -p 22022:22   -p 8125:8125/udp     
             samuelebistoletti/docker-statsd-influxdb-grafana       
