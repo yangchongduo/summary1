@@ -11,3 +11,8 @@ Vue.js在这里主要做了三件事：
 最后达到模型和视图关联起来。
 http://www.imooc.com/article/14466
 ```
+##### vue的ssr
+------------------------------
+```
+https://github.com/ccforward/vue-ssr
+```
