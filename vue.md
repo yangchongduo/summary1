@@ -1,3 +1,16 @@
+#### vue-router  router是不能改变的 重点
+---------------------
+```
+router是不能改变的
+const router = new VueRouter({
+    mode: 'history',
+    base: __dirname,
+    routes: [
+        {path: '/', component: firstComponent},
+        {path: '/about', component: About}
+    ]
+});
+```
 ##### vue源码总结
 -----------------------------
 ```
