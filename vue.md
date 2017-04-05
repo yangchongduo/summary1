@@ -1,3 +1,21 @@
+#### methods
+----------------------
+```
+  methods:{
+            handleClick(){
+                this.number+=1
+            }
+        }
+```
+#### computed
+---------------
+```
+  computed: {//必须有return 
+            count(){
+                return this.price * this.number
+            }
+        }
+```
 #### vue-router  router是不能改变的 重点
 ---------------------
 ```
