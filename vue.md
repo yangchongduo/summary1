@@ -1,3 +1,9 @@
+#### $route 不是$router 参数的问题
+---------------------------
+```
+this.$route.query
+this.$route.params
+```
 #### methods
 ----------------------
 ```
