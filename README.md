@@ -76,6 +76,7 @@ mv -u // 文件夹下所有的文件  单个文件不需要
              
 #### ab测压 ApacheBench   ab -c 5000 -n 600 http://127.0.0.1/index.php
 -------------------------------
+```
                   http://www.ha97.com/4617.html          http://www.cnblogs.com/xiaoyaowuming/p/5622660.html    
                   D:\httpd-2.4.25-x64-vc14-r1\Apache24\bin    
                       1：安装之后 请到 安装文件夹下面  使用cmd 执行命令 （bash 是不好用的）   
@@ -91,7 +92,7 @@ mv -u // 文件夹下所有的文件  单个文件不需要
                        接口  是大量返回数据的 所以肯定是  qps 肯定低    
                         Total transferred:        77611764 bytes    
                          HTML transferred:         77314200 bytes   
-                   
+ ```        
   
   #### http缓存的由来
   ---------------------
@@ -119,7 +120,8 @@ mv -u // 文件夹下所有的文件  单个文件不需要
  ```
  
 #### docker沙箱机制  pm2 提供了pm2-docker 
---------------------------  
+-------------------------- 
+```
            日志：log4 和pm2 专门的处理日志的方案
          Docker 可以让开发者打包他们的应用以及依赖包到一个轻量级、可移植的容器中，然后发布到任何流行的 Linux 机器上，也可以实现虚拟化。  : 
         1.docker run -d -P training/webapp   
@@ -128,11 +130,11 @@ mv -u // 文件夹下所有的文件  单个文件不需要
           3：docker port samuelebistoletti/docker-statsd-influxdb-grafana    
           4：boot2docker ip     
           (https://www.v2ex.com/t/328124#reply3)     
-          
+```          
 #### decorate   babel-node 运行 **.js即可  先全局安装 npm i babel-cli -g   .babelrc   "plugins": ["transform-decorators-legacy"]
 
 --------------------------------
-
+```
               "babel-cli": "^6.23.0",  
           "babel-plugin-transform-decorators-legacy": "^1.3.4",  
         只能decoreat 类或者类的方法 不能单独装饰 一个函数
@@ -169,7 +171,7 @@ mv -u // 文件夹下所有的文件  单个文件不需要
                       }  
                       const math=new MyTestableClass()  
                       math.add(1,3)  
-     
+ ```    
              
              
 #### 在angular的项目下如何增加react 或者vue的项目呢？
