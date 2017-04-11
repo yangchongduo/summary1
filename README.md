@@ -83,7 +83,26 @@ mv -u // 文件夹下所有的文件  单个文件不需要
                          HTML transferred:         77314200 bytes   
                    
                    
-                   
+ #### cors 经过测试好用
+ ---------------------------------
+ ```
+ const getCors=function () {
+        if(window.XMLHttpRequest){
+            return new XDomainRequest()
+        }
+        if(window.XMLHttpRequest){
+            var xhr=new XMLHttpRequest();
+            if(xhr.withCredentials!==void 0){
+                return xhr
+            }else {
+                throw new Error('不支持cors');
+            }
+        }else {
+            throw new Error('不支持cors');
+        }
+    }
+ ```
+ 
 #### docker沙箱机制  pm2 提供了pm2-docker 
 --------------------------  
            日志：log4 和pm2 专门的处理日志的方案
@@ -282,8 +301,8 @@ mv -u // 文件夹下所有的文件  单个文件不需要
           可以概括为：Proxy 的核心作用是控制外界对被代理者内部的访问，
           Decorator 的核心作用是增强被装饰者的功能。只要在它们核心的使用场景上做好区别，那么像是访问日志这样的功能，
           虽然本文使用了 Proxy 实现，但也可以使用 Decorator 实现，  
-           
-今天是星期几
+           
+#### 今天是星期几
 -----------------------------
 
           var a = new Array("日", "一", "二", "三", "四", "五", "六");  
@@ -294,7 +313,7 @@ mv -u // 文件夹下所有的文件  单个文件不需要
 
 
 
-十字路口  观察者模式可以做很多事情 桥接模式 可以考虑一下 有空再弄
+##### 十字路口  观察者模式可以做很多事情 桥接模式 可以考虑一下 有空再弄
 ------------------
      class Event {
     constructor() {
