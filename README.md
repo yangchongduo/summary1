@@ -82,7 +82,12 @@ mv -u // 文件夹下所有的文件  单个文件不需要
                         Total transferred:        77611764 bytes    
                          HTML transferred:         77314200 bytes   
                    
-                   
+  
+  #### http缓存的由来
+  ---------------------
+  ```
+  http://mp.weixin.qq.com/s/W2ybb7-r1ZKW6B9mI6ITzw
+  ```
  #### cors 经过测试好用
  ---------------------------------
  ```
