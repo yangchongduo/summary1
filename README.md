@@ -3,7 +3,7 @@
 ```
 angualr:ng-click就会触发一次digst 检查，会触发所有的watcher(所有的wather去更新)作用域里面的这个是非常不好的 
 angualr2.x:开始出现组件的概念，利用的python的decoreate开始不断的包住组件，唯一一个不是利用“继承”写组件的(react是利用es6) vue不用继承的概念
-react:虚拟dom结构树 就是普通的对象 对象比较 diff算法 两种假设。。。 自己看吧（https://github.com/react-cd/react-pxq）
+react:虚拟dom结构树 就是普通的对象 对象比较 diff算法 两种假设。。。 [自己看吧](https://github.com/react-cd/react-pxq)
 vue:两种设计模式 proxy和观察者模式  https://github.com/yangchongduo/Front-end-Interview-questions/blob/master/vue.md#vue源码总结
 三个框架有什么区别呢？ react依赖的各种太多，需要很多的配置 但是redux 确实好用
 vue东西比较少 少也好，没有像promiseMiddle，thunk的middle这种概念 
