@@ -94,14 +94,14 @@ mv -u // 文件夹下所有的文件  单个文件不需要
                          HTML transferred:         77314200 bytes   
  ```        
   
-  #### http缓存的由来
-  ---------------------
-  ```
+ #### http缓存的由来
+ ---------------------
+```
   http://mp.weixin.qq.com/s/W2ybb7-r1ZKW6B9mI6ITzw
-  ```
- #### cors 经过测试好用
- ---------------------------------
- ```
+```
+#### cors 经过测试好用
+---------------------------------
+```
  const getCors=function () {
         if(window.XMLHttpRequest){
             return new XDomainRequest()
@@ -117,7 +117,7 @@ mv -u // 文件夹下所有的文件  单个文件不需要
             throw new Error('不支持cors');
         }
     }
- ```
+```
  
 #### docker沙箱机制  pm2 提供了pm2-docker 
 -------------------------- 
