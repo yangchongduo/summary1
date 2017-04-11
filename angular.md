@@ -22,6 +22,9 @@ http://www.cnblogs.com/leo_wl/p/3446075.html
 　　6.  浏览器重新渲染视图。
 
 假设你在一个ng-click指令对应的handler函数中更改了scope中的一条数据，此时AngularJS会自动地通过调用$digest()来触发一轮$digest循环。
-#### 当$digest循环开始后，【它会触发每个watcher】。这些watchers会检查scope中的当前model值是否和上一次计算得到的model值不同。如果不同，那么对应的回调函数会被执行。调用该函数的结果，就是view中的表达式内容(译注：诸如{{ aModel }})会被更新。除了ng-click指令，还有一些其它的built-in指令以及服务来让你更改models(比如ng-model，$timeout等)和自动触发一次$digest循环。
-
+ 当$digest循环开始后，【它会触发每个watcher】。这些watchers会检查scope中的当前model值是否和上一次计算得到的model值不同。如果不同，那么对应的回调函数会被执行。调用该函数的结果，就是view中的表达式内容(译注：诸如{{ aModel }})会被更新。除了ng-click指令，还有一些其它的built-in指令以及服务来让你更改models(比如ng-model，$timeout等)和自动触发一次$digest循环。
 ```
+#### test
+```
+```
+      [这是一个连接](http://www.cnblogs.com/leo_wl/p/3446075.html)
