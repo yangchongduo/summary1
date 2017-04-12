@@ -1,3 +1,15 @@
+#### pm2 cluter 模块启动多个进程？ 监听同一个端口号为什么能做到？
+-----------------
+```
+Node.js cluster module ：
+Luckily enough, Node.js offers the cluster module, which basically will spawn some workers which can all share any TCP connection.
+nodejs 当 spawn 多个进程的时候，各子进程可以共享 tcp 连接 各个进程通过 IPC channels 
+https://keymetrics.io/2015/03/26/pm2-clustering-made-easy/
+https://github.com/jawil/blog/issues/7
+pm2 的cluster 模式是基于node的原生cluster 做的吗？ 而 node原生模模块是基于子进程中的spawn模式吗
+？ 他们之间共享通过ipc通道 共享 tcp链接吗？
+```
+
 #### module.exports和exports的区别
 ---------------------------------
 ```
