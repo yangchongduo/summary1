@@ -19,3 +19,9 @@ DELETE FROM table_name [WHERE Clause]
 select from
 SELECT column_name,column_name FROM table_name
 ```
+####  数据库索引 场景1: 给数据库增加索引会增加查询的速度
+--------------------------------------------
+```
+SELECT * FROM mytable WHERE category_id=1;
+CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,adddate);
+```
