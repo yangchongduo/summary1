@@ -106,12 +106,65 @@ drop database  if  exists xhjs;  不存在在建立
     -> name varchar(10) default not null "", 
        age int not null default ,// 这样就可以了
   -> );
+
+  
+  
+  
 ```
 #### 索引
 -----------------------------
 ``` 
 1：主键索引  最好为每张数据表 定位一个主键索引 一个表只能有一个时主键的； 主键的值不能为空； primary key 
 2: 唯一索引  和主键索引 都可以创建重复的值  unique  不是为了提高访问速度，而是为了能够避免数据重复
+  create table t3(  // unsigned 是不能放在 not null 后面
+   -> id int unsigned not null  auto_increment,
+    -> name varchar(20) not null default '' unique,
+    -> age int,
+    -> primary key(id));
+  +-------+------------------+------+-----+---------+----------------+
+  | Field | Type             | Null | Key | Default | Extra          |
+  +-------+------------------+------+-----+---------+----------------+
+  | id    | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+  | name  | varchar(20)      | NO   | UNI |         |                | UNI  唯一的；
+  | age   | int(11)          | YES  |     | NULL    |                |
+  +-------+------------------+------+-----+---------+----------------+
+  **************************************************常规索引和全局索引没有做****************************************
+ 3：常规索引   是程序员 最重要的技术  提高数据库的性能  ************************
+    1111，
+    22222
+    。。。。
+    1万条记录
+    假如查询数据  查询的数据 假如是第一条的话，会很快查到，假如是倒数第二条就需要读取之前很多的 效率很低
+    1 可以提高查找的速度
+    2 会减慢 数据列上的删除 插入 修改的速度
+    分表 一个要创建索引的放在一个表 没有索引的放在一个表里 通过一个字段两者关联起来；
+  4:全局索引
+  
+```
+#### mysql的表的类型 可以选择不同存续表的类型
+-------------------------------
+```
+create table t3(id int) engine = MyISAM;
+show engines; 9种的类型
+create table () type myisam  // type 好像不对
+create table () engine innodb
+ MyISAM   optimize table 
+           强调快速读取操作
+           也有一些功能不支持
+ InnoDB   更新换代的产品 支持外键
+          支持myisam的功能
+          速度比myisam的读写速度慢
+          功能                   MyISAM        InnoDB
+          事务处理                  no             yes
+          数据行锁定               no               yes
+          外键                      no               yes
+          空间                    yes 相对较小         no 相对较大  最大2倍      
+          全文索引                  支持             不支持
+        
+```
+#### 默认字符集
+------------------------------
+```
 
 ```
 #### mysql
