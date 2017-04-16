@@ -67,15 +67,52 @@ drop database  if  exists xhjs;  不存在在建立
   用整数保存事件  是比较好的  比较容易计算  time比较好
      
 ```
-#### 保持表的一致性
+####  属性保持表的一致性
 --------------
 ```
 数据的字段属性：
-    unsigned 设置无符号的  可以让空间增加一倍   场景:这个字段不需要负数 设置这个属性 -128-127   增加一倍就是
+    1：unsigned 设置无符号的  可以让空间增加一倍   场景:这个字段不需要负数 设置这个属性 -128-127   增加一倍就是
                  只能用在数值型字段 整型和浮点型； 有符号和无符号的； 字符串和时间不分有符号  无符号
        create table t2(id int(5)) // 这样就可以
-    zerofill  0填充    只能用在数值型字段  前
+    2:zerofill  0填充    只能用在数值型字段  前
       create table t3(id int(5) zerofill)自动补齐 前面的0
+       create table t2(name int(5) unsigned, age float(5,2) unsigned,  data varchar(10));
+       int 超过五位就会保存，无法存入 ，  就是来限制长度的  
+       float 也是可以控制长度的；  往后自动补0  小数后面不到  现在设置的是小数后面是2位，23.3  数据库会变成23.30；
+       varchar（10）； 都是可以进行限制的
+    3: auto_increment    整形  数据没增加一条就会自动加1；
+    null  0  或者留空  会自动加1 
+     create table t3(id int auto_increment primary key, name varchar(10));增加一个主键 才可以；
+     insert into t3  values(null,"xxx");   
+     连续执行四次 
+     +----+------+
+     | id | name |
+     +----+------+
+     |  1 | xxx  |
+     |  2 | xxx  |
+     |  3 | xxx  |
+     |  4 | xxx  |
+     +----+------+
+     经过测试   在最大的id 上面+1  delete form t3 where id >1 and id <5; 就可以删除 现在数据库会自动排序
+     每个表 最好都设置一个 id 字段 auto_increment
+    4： null  和 not null；
+    创建表的时候 都不要插入 null  有可能在程序转化的时候 不能转化为我们想要值
+    那就设置not null 就可以了
+    create table t4(id int not null, name varchar(10) not null); 
+    insert into t4(name) values('xxx'); 一般多个字段，插入一个，其他会默认为null 但是现在设置为not null 所以就会报错；
+    5:default 一般的默认值是null 现在是not null  所以要有 default 这个属性；
+     create table t1(
+    -> id int unsigned auto_increment not null primary key,// 必须有主键
+    -> name varchar(10) default not null "", 
+       age int not null default ,// 这样就可以了
+  -> );
+```
+#### 索引
+-----------------------------
+``` 
+1：主键索引  最好为每张数据表 定位一个主键索引 一个表只能有一个时主键的； 主键的值不能为空； primary key 
+2: 唯一索引  和主键索引 都可以创建重复的值  unique  不是为了提高访问速度，而是为了能够避免数据重复
+
 ```
 #### mysql
 ----------------------
