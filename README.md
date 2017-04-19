@@ -64,7 +64,11 @@ mv -u // 文件夹下所有的文件  单个文件不需要
 ```
 #### git
 ----------------------------
-            git add .
+            git  branch --all查看所有的分支 
+            git branch  是本地分支
+            场景 git commit 之后想消除就 回退版本号 git reflog 然后  git reset--hard 版本号
+            假如 想研究代码但是不想 在看一个代码 就可以 弄个分支 然后研究代码 ，最后不要提交就可以了
+            git add .
             git commit -m "first commit"
             git remote add origin https://github.com/yangchongduo/xxx.git
             git push -u origin master
