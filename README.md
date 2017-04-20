@@ -64,7 +64,10 @@ mv -u // 文件夹下所有的文件  单个文件不需要
 ```
 #### git
 ----------------------------
-          
+           
+            window 下新建分支(dev)之后  然后 操作， 在没有git commit-m 'xxx' 时候 切换到master 分支 ，dev分支的内容还是有的，
+            现在重新切换到 dev分支 然后 git add .  git commit -m 'dev' ,这样在切换到master 分支，这个时候dev分支的内容就没了
+            
             git  branch --all查看所有的分支 
             git branch  是本地分支
             场景 git commit 之后想消除就 回退版本号 git reflog 然后  git reset--hard 版本号
