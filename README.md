@@ -65,9 +65,20 @@ mv -u // 文件夹下所有的文件  单个文件不需要
 #### git
 ----------------------------
            
+           git commit 合并多次提交 
+           git rebase -i  版本号 假如将最新的三个合并成一个。。 就需要写第四个版本
+           3）进入之后 i  第一个pick 不用修改 剩下的全部修改成 s 保存退出
+           4）显示提交的注释 注释掉其他的，修改 commit message 就可以了  保存 退出
+           git log --oneline
+           假如中间不想合并的话 git rebase --abort
+           建立分支  git checkout dev 2)git branch dev 这样是可以的  
+           git checkout -b dev  会讲原先的分支给删除
+           1:  在任何 git add .和 git commit -m 'xxx' 都得需要git status or git diff 不同之处
             window 下新建分支(dev)之后  然后 操作， 在没有git commit-m 'xxx' 时候 切换到master 分支 ，dev分支的内容还是有的，
             现在重新切换到 dev分支 然后 git add .  git commit -m 'dev' ,这样在切换到master 分支，这个时候dev分支的内容就没了
-            
+            ls -a 查看所有的文件
+            在dev分支上 git diff master 就可以看到两个分支有什么不同
+           
             git  branch --all查看所有的分支 
             git branch  是本地分支
             场景 git commit 之后想消除就 回退版本号 git reflog 然后  git reset--hard 版本号
