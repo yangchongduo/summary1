@@ -64,7 +64,7 @@ mv -u // 文件夹下所有的文件  单个文件不需要
 ```
 #### git
 ----------------------------
-           
+```       
            git commit 合并多次提交 
            git rebase -i  版本号 假如将最新的三个合并成一个。。 就需要写第四个版本
            3）进入之后 i  第一个pick 不用修改 剩下的全部修改成 s 保存退出
@@ -89,7 +89,7 @@ mv -u // 文件夹下所有的文件  单个文件不需要
             git commit -m "first commit"
             git remote add origin https://github.com/yangchongduo/xxx.git
             git push -u origin master
-
+```
 
 #### 架构  13种属性 5种大风格 21种具体实例的架构风格 
 -----------------------------
