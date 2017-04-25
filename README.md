@@ -60,7 +60,10 @@ vue东西比较少 少也好，没有像promiseMiddle，thunk的middle这种概�
 ```
 rm-rf 删除所有的文件
 cp -rf copy所有的文件
+mv -f 移动所有的文件
+mv test.txt newName.txt 重命名
 mv -u // 文件夹下所有的文件  单个文件不需要
+cp  -rf
 ```
 #### git
 ----------------------------
