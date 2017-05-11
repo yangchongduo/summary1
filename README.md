@@ -55,6 +55,29 @@ vue东西比较少 少也好，没有像promiseMiddle，thunk的middle这种概�
      这样就可以 达到完美
 (http://mp.weixin.qq.com/s/zFFS5nSD2kF-3c8i0OdvBw)
 ```
+####  http2  
+---------------------
+```
+
+各种后端语言有启动服务的特性，这个服务是http||https||http2这个在于我们使用的包。
+node模块提供了http2 这的包  
+var options={
+  key: fs.readFileSync(path.join(__dirname, '/localhost.key')),
+  cert: fs.readFileSync(path.join(__dirname, '/localhost.crt'))
+}
+var options={
+  key: fs.readFileSync(path.join(__dirname, '/localhost.key')),
+  cert: fs.readFileSync(path.join(__dirname, '/localhost.crt'))
+}
+let server =http2.createServer(options,app.callback())
+```
+ xxx| http2 | http1
+----|------|----
+100个ajax请求 | 800ms  | 22000ms
+160张图片 | 1400ms  | 6500ms
+
+
+
 #### 命令行
 ---------------------------------------
 ```
