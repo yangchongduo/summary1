@@ -1,3 +1,8 @@
+#### class
+---------------
+```
+:class="['notUsed-discount',{'used-back':usedShow=='used'},{'expired':expiredShow==='expired'}]" 
+```
 #### $route 不是$router 参数的问题
 ---------------------------
 ```
