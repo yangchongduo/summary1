@@ -1,3 +1,10 @@
+#### 取值
+----------------
+```
+一个指令  一个不是指令
+data-log-param='ad={{order.clickType}}'
+:title="other.name" 
+```
 #### class
 ---------------
 ```
