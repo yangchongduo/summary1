@@ -22,3 +22,8 @@ hint: Fix them up in the work tree, and then use 'git add/rm <file>'
 hint: as appropriate to mark resolution and make a commit.
 fatal: Exiting because of an unresolved conflict.
 ```
+#### 查看具体文件的修改
+```
+git log -p xxxx
+hjkl 
+```
