@@ -92,6 +92,7 @@ cp  -rf
 #### git
 ----------------------------
 ```       
+           1 git reset HEAD . 场景：做完项目之后 需要git diff 如果忘了，就git add .  在没有commit 之前，回退使用这个，可再次查看diff
            git commit 合并多次提交 
            git rebase -i  版本号 假如将最新的三个合并成一个。。 就需要写第四个版本
            3）进入之后 i  第一个pick 不用修改 剩下的全部修改成 s 保存退出
