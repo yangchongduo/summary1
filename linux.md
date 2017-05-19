@@ -15,4 +15,6 @@ tail -f 是什么功能 查看日志文件***********
 我们如何必须需要日志 也就是页面中的log
 我们讲log 放在一个文件下  可进行分割
 然后我们在请求的时候可以查看这个 tail -f 来查看这个文件的追加的内容
+tail -f fe.server.log| grep 'getinfo'
+tail -f fe.server.log| grep 'duration'
 ```
