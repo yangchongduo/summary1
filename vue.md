@@ -2,13 +2,14 @@
 ---------------------
 ```
 events:{
-    'after-alert-sure':function (uuid) {
+    'alert-sure':function (uuid) {
   },
 ```
 #### 取值
 ----------------
 ```
 一个指令  一个不是指令
+ <a href="{{ order.url }}">
 data-log-param='ad={{order.clickType}}'
 :title="other.name" 
 ```
