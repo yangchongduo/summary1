@@ -1,3 +1,10 @@
+#### vue1 events
+---------------------
+```
+events:{
+    'after-alert-sure':function (uuid) {
+  },
+```
 #### 取值
 ----------------
 ```
