@@ -218,6 +218,9 @@ cp  -rf
 #### git
 ----------------------------
 ```       
+
+           将本次所有的操作全部取消回到最初的状态 git checkout .   
+           git status 找到哪个文件  git checkout xxxx.js||vue 即可
            1 git reset HEAD . 场景：做完项目之后 需要git diff 如果忘了，就git add .  在没有commit 之前，回退使用这个，可再次查看diff
            git commit 合并多次提交 
            git rebase -i  版本号 假如将最新的三个合并成一个。。 就需要写第四个版本
@@ -252,7 +255,7 @@ cp  -rf
               属性是由架构中的约束所导致的，约束往往是由在架构元素的某个方面   
               应用软件工程原则  来驱动的    
               http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF        
-#### nglix
+#### nginx
 ------------------------------
 ```
 反向代理提高网站性能主要通过三个方面：
