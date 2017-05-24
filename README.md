@@ -76,7 +76,21 @@ let server =http2.createServer(options,app.callback())
 100个ajax请求 | 800ms  | 22000ms
 160张图片 | 1400ms  | 6500ms
 
+#### js单进程
+```
+因为是单进程的 for循环在执行，2秒之后放在队列里面，但是没有放在执行环境里面，执行环境还是for循环，等for循环结束后，会从队列里面执行这个
+console.log('')；这个
+console.time('small loop');
+for (var i = 0; i < 10000000000; i++) {
 
+}
+console.timeEnd('small loop');
+setTimeout(()=>{
+	console.log('XXXXX')
+},2000)
+small loop: 13633.704ms
+XXXXX
+```
 #### nglix
 ----------------------------
 ```
