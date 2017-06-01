@@ -235,8 +235,9 @@ cp  -rf
 #### git
 ----------------------------
 ```       
-
-           将本次所有的操作全部取消回到最初的状态 git checkout .   
+           git co 分支号；
+	   git rebase --abort
+	   将本次所有的操作全部取消回到最初的状态 git checkout .  
            git status 找到哪个文件  git checkout xxxx.js||vue 即可
            1 git reset HEAD . 场景：做完项目之后 需要git diff 如果忘了，就git add .  在没有commit 之前，回退使用这个，可再次查看diff
            git commit 合并多次提交 
