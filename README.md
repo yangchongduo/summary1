@@ -232,9 +232,10 @@ mv test.txt newName.txt 重命名
 mv -u // 文件夹下所有的文件  单个文件不需要
 cp  -rf
 ```
-#### git
+#### [git](http://www.cnblogs.com/sinojelly/archive/2011/08/07/2130172.html)
 ----------------------------
 ```       
+           处理冲突：看git 提示需要进行rebase  就不需要git commit  
            git co 分支号；
 	   git rebase --abort
 	   将本次所有的操作全部取消回到最初的状态 git checkout .  
