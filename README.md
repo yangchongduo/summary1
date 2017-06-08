@@ -41,6 +41,14 @@
 npm install yarn -g
 npm uninstall yarn  -g
 curl -o- -L https://yarnpkg.com/install.sh | bash  ok 
+> Extracting to ~/.yarn...
+> Adding to $PATH...
+> We've added the following to your /Users/yangchongduo/.zshrc
+> If this isn't the profile of your current shell then please add the following to your correct profile:
+
+export PATH="$HOME/.yarn/bin:$PATH"
+
+> Successfully installed Yarn 0.24.6! Please open another terminal where the `yarn` command will now be available.
 ```
 #### 三个前段框架原理的理解
 ---------------------------------------
