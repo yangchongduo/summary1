@@ -36,6 +36,12 @@
     又回到child_process的fork模式了
     
 ```
+#### yarn
+```
+npm install yarn -g
+npm uninstall yarn  -g
+curl -o- -L https://yarnpkg.com/install.sh | bash  ok 
+```
 #### 三个前段框架原理的理解
 ---------------------------------------
 ```
