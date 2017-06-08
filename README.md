@@ -50,6 +50,15 @@ export PATH="$HOME/.yarn/bin:$PATH"
 
 > Successfully installed Yarn 0.24.6! Please open another terminal where the `yarn` command will now be available.
 ```
+
+|作用      |    NPM 命令| Yarn 命令  |
+| :-------- | --------:| :--: |
+| 安装  | npm install |  yarn  |
+|安装某个包     |   npm install xxx —save |  yarn add xxx  |
+| 删除某个包      |    npm uninstall xxx —save | yarn remove xxx  |
+| 开发模式下安装某个包      |    npm install xxx —save-dev | yarn add xxx —dev  |
+| 开发模式下安装某个包      |   npm update —save | yarn upgrade  |
+| 全局安装     |   npm install xxx –global | 	yarn global add xxx  |
 #### 三个前段框架原理的理解
 ---------------------------------------
 ```
