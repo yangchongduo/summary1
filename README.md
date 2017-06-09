@@ -36,6 +36,8 @@
     又回到child_process的fork模式了
     
 ```
+#### 容错处理
+
 #### yarn
 ```
 npm install yarn -g
