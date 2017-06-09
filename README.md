@@ -37,7 +37,19 @@
     
 ```
 #### 容错处理
-
+```
+ this.body={}  或者undefined 这样就会报错 不过需要设置一个默认值，假如赋值不成功就报错，报错的哪行try catch
+  let xxx = '';
+  try { //
+    xx = this.body &&  this.body.data && this.body.data.isGray || "";
+  } catch (e) {}
+};
+```
+#### 如果配置npm包的源
+```
+~ vim  .npmrc 
+registry=https://registry.npm.taobao.org/
+```
 #### yarn
 ```
 npm install yarn -g
