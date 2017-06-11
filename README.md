@@ -37,6 +37,9 @@
     
 ```
 #### 容错处理
+ this.body='xxxx';
+ const { code, message, data = { isGray: false }} = this.body;  
+ 这个接口即使没有返回值，也会正常运行 
 ```
  this.body={}  或者undefined 这样就会报错 不过需要设置一个默认值，假如赋值不成功就报错，报错的哪行try catch
   let xxx = '';
