@@ -1,3 +1,13 @@
+### [效果](https://47.94.95.52/)  
+    
+[通过nginx301到80](https://47.94.95.52/)   
+[不通过nginx直接到端口号](http://47.94.95.52:8080/)    
+[nginx80->443 模拟实现HSPS](http://47.94.95.52:80/)      
+[HSPS](https://47.94.95.52:8081/http2.html)  
+[经典http2 vs http1 (go实现)](https://http2.golang.org/gophertiles?latency=0)    
+[http2 vs http1](https://http2.akamai.com/demo)      
+
+
 ### http1
 http1自身的问题:
  1. 每一个请求都会重新建立一个 TCP 连接，每次连接都要进行tcp三次握手，tcp慢启动，当有很多请求时网络延迟会非常严重。[http/1.1的持久连接](http://blog.csdn.net/u011446963/article/details/46391281)(在事务处理结束之后仍然保持在打开状态的TCP连接称之为持久连接)很好的解决了这个问题 (就一次tcp三次握手,闲置了一段时间后就关闭它) ;
