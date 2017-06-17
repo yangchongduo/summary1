@@ -27,3 +27,21 @@ fatal: Exiting because of an unresolved conflict.
 git log -p xxxx
 hjkl 
 ```
+#### 如何设置有行号
+  cp /usr/share/vim/vimrc ~/.vimrc
+
+  先复制一份vim配置模板到个人目录下
+
+  注：redhat 改成 cp /etc/vimrc ~/.vimrc
+
+步骤2：
+
+  vi ~/.vimrc
+
+  进入insert模式，在最后加二行
+
+  syntax on
+
+  set nu!
+
+保存收工。
