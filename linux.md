@@ -17,7 +17,7 @@ tail -f 是什么功能 查看日志文件***********
 然后我们在请求的时候可以查看这个 tail -f 来查看这个文件的追加的内容
 tail -f fe.server.log| grep 'getinfo'
 tail -f fe.server.log| grep 'duration'
-lsof -i 端口号 查看端口是否占用   
+lsof -i:80 端口号 查看端口是否占用   
 502 bad getway 找到nginx错误文件 监听这个文件。。。   
 ```
 
