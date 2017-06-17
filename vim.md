@@ -28,6 +28,7 @@ git log -p xxxx
 hjkl 
 ```
 #### 如何设置有行号
+```
   cp /usr/share/vim/vimrc ~/.vimrc
 
   先复制一份vim配置模板到个人目录下
@@ -45,3 +46,4 @@ hjkl
   set nu!
 
 保存收工。
+```
