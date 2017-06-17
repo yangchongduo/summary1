@@ -66,6 +66,12 @@ git config --global merge.tool kdiff3
 git config --global meregtool.kdiff3.path "/usr/bin/kdiff3"  
 git config --global alias.visual "!gitk
 ```
+#### true and false 赋值
+```
+var  end = Date.parse('2017/06/20 00:00:00');  
+    var  now = Date.now();   
+    flag= now <= end;now <= end(本身的结果就是false 和true)
+```
 #### HSTS 
 ```
 纯 IP 的请求，HSTS 没法处理，比如 http://2.2.2.2 ， 即便响应头中设置了 STS，浏览器也不会理会（未测试）  
