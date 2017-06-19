@@ -8,3 +8,4 @@ https://gold.xitu.io/entry/58d7b1411b69e6006bb7d065
 4:从应用部署角度理解Docker
 5：从集群管理角度理解Docker
 ```
+#### [docker初试](http://blog.acs1899.com/linux/mac/2016/02/15/hellow-docker.html)
