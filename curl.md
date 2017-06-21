@@ -8,8 +8,8 @@
 curl -l -H "Content-type: application/json" -X POST -d '{"name": "test", "pwd": "test", "expireIn": 100}' http://api.broncodes.com/v1/token
 
 
-L 是强制重定向
--H 头部
--X 请求的方式；
--d 是带的参数；
+L 是强制重定向  
+-H 头部  
+-X 请求的方式；  
+-d 是带的参数；  
 
