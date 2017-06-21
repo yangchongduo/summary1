@@ -10,3 +10,4 @@ http://www.aboutyun.com/thread-9223-1-1.html
 >5 代码值和赋值之后，问题：数据的位置 从配置文件中可以查出来  
 >6 mongo 安装 很多项目是基于mongo 和 redis的  
 >7 需要具体看到浏览器中有cookie
+>8 redis-cli  flushall 清除缓存
