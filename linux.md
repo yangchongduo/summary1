@@ -23,7 +23,8 @@ lsof -i:80 端口号 查看端口是否占用
 502 bad getway 找到nginx错误文件 监听这个文件。。。   
 open -a xxxx  打开一个软件或  者文本编辑器  
 open -e xxxx 同样的道理    
-grep -r 查找的内容 路径   forexample  grep -R || -r yangchongduo fe.....  
+grep -r 查找的内容 路径   forexample  grep -R || -r yangchongduo fe.....    
+history | grep ''//  查看所有的历史命令，可以快速的查找命名   
 ```
 
 #### 1、cd命令
