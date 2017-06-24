@@ -4,6 +4,10 @@
 >3 新机器需要部署的node的话，在没有docker的情况下，需要手动安装node，使用docker之后，不需要因为docker中的image已经有了项目所需要的版本  
 >4 还有就是调试也方便，不用在自己电脑配置那么多，直接用docker就能启动别人的项目，省时省力      
 
+
+[Docker Volume](https://blog.fundebug.com/2017/06/07/what-is-docker-volume/)
+
+
 #### [docker与虚拟机的比较](https://blog.fundebug.com/2017/05/31/docker-and-vm/);
 >1 什么是云计算？阿里云，百度云，腾讯云。一般的公司买了自己的服务器，安装软件，运行，维护(op的成本很高)  
 >2 云计算的实现。 通过虚拟机。但是虚拟机内存占用高  
