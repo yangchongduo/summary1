@@ -2,7 +2,8 @@
 >1 node版本升级，需要到机器上一个一个的升级。  
 >2 假如使用docker的话修改镜像重新部署。              
 >3 新机器需要部署的node的话，在没有docker的情况下，需要手动安装node，使用docker之后，不需要因为docker中的image已经有了项目所需要的版本  
->4 还有就是调试也方便，不用在自己电脑配置那么多，直接用docker就能启动别人的项目，省时省力      
+>4 还有就是调试也方便，不用在自己电脑配置那么多，直接用docker就能启动别人的项目，省时省力     
+>5 就比如你说的升级node，只需要在registry上传你要的node，所有有需要的容器来pull这个node即可    
 
 
 [Docker Volume](https://blog.fundebug.com/2017/06/07/what-is-docker-volume/)
