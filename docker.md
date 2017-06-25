@@ -1,4 +1,27 @@
-#### docker使用场景1  
+#### docker命令   
+>1 运行image 命令  
+```
+docker run -d -p 8080:80 alexwhen/docker-2048  
+```  
+>2 在这个image 运行sh 这样就能够进入到命令 image 没有运行   
+```
+sudo docker run -ti -p 8080:80 alexwhen/docker-2048 /bin/sh   
+```  
+>3 不可能从0开始，下载别人镜像，然后不知道为什么？   
+```
+docker run -t -i ubuntu:15.10 /bin/bash  NO   
+docker run -t -i ubuntu:15.10 /bin/sh  NO  
+sudo docker attach b2e73e77f1e7   NO   
+```  
+>4 自己编译image，一般会改人家的配置文件
+```
+sudo docker build -t 镜像名字 .
+```  
+#### docker 容器之间通信？    
+#### 数据卷  ？  
+#### docker命令 
+docker run -ti -p 8080:80 alexwhen/docker-2048 /bin/sh 
+#### docker使用场景1  
 >1 node版本升级，需要到机器上一个一个的升级。  
 >2 假如使用docker的话修改镜像重新部署。              
 >3 新机器需要部署的node的话，在没有docker的情况下，需要手动安装node，使用docker之后，不需要因为docker中的image已经有了项目所需要的版本  
@@ -40,10 +63,36 @@ Docker对资源占少，应用之间能做到很好的隔离同时也能保证�
 本篇文章主要介绍如何使用docker，创建自己的镜像，运行容器等。具体使用准则参考官方文档。   
 
 #### Docker
->1  docker 是干净的，假如docker有日志的话，需要通过（vl。。。后续补充）映射文件到docker 外部，这样docker的内容就不会一直增加，  
+>1  docker 是干净的，假如docker有日志的话，需要通过（VOLUME。。。后续补充）映射文件到docker 外部，这样docker的内容就不会一直增加，  
 >2 commit 不要使用  
 >3 占用内存少，虚拟机的内存占用太高，docker比较少。  
 
 
+```
+FROM dockerfile/ubuntu
+
+# Install Nginx.
+RUN \
+  add-apt-repository -y ppa:nginx/stable && \
+  apt-get update && \
+  apt-get install -y nginx && \
+  rm -rf /var/lib/apt/lists/* && \
+  echo "\ndaemon off;" >> /etc/nginx/nginx.conf && \
+  chown -R www-data:www-data /var/lib/nginx
+
+# Define mountable directories. 将一些文件放在外部 镜像本身是干净的
+VOLUME ["/etc/nginx/sites-enabled", "/etc/nginx/certs", "/etc/nginx/conf.d", "/var/log/nginx", "/var/www/html"]
+
+# Define working directory.
+WORKDIR /etc/nginx
+
+# Define default command.
+CMD ["nginx"]
+
+# Expose ports.
+EXPOSE 80
+EXPOSE 443
+
+```
 
 
