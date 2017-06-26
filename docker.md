@@ -1,3 +1,4 @@
+#### 可做一个自己开发用的node redis sql mongo的镜像，换电脑的话，如果开发的话，任何项目都基于这个环境扩展   
 #### docker 每次输入sudo的处理方案:
 ```
 1.创建docker组：sudo groupadd docker
@@ -32,8 +33,11 @@ sudo docker attach b2e73e77f1e7   NO
 ```
 sudo docker build -t 镜像名字 .
 ```  
-#### docker 容器之间通信？    
-#### 数据卷  ？  
+#### [docker 容器之间通信？](http://blog.csdn.net/kongxx/article/details/38676917)    
+#### [数据卷  ？](https://blog.fundebug.com/2017/06/07/what-is-docker-volume/)
+VOLUME nginx的image，错误日志需要导出来，node服务的日志导出来，    
+应用的代码有没有必要导出来呢？  
+
 #### docker命令 
 docker run -ti -p 8080:80 alexwhen/docker-2048 /bin/sh 
 #### docker使用场景1  
