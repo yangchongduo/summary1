@@ -1,4 +1,12 @@
-#### 可做一个自己开发用的node redis sql mongo的镜像，换电脑的话，如果开发的话，任何项目都基于这个环境扩展   
+#### docker 国内image源
+>1 一句话没听见，浪费了一天，因为docker的image 是国外的，必须通过国内image快，   
+>2 163 https://c.163.com/hub#/m/home/ 不建议使用      
+>3 https://dashboard.daocloud.io/packages   
+> curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://ef017c13.m.daocloud.io  
+> 改变docker的镜像源 超级无敌快  
+
+#### 在下载npm的时候服务器尽让卡，有可能是源的问题，默认是淘宝源，
+#### 可做一个自己开发用的node redis sql mongo的镜像，换电脑的话，如果开发的话，任何项目都基于这个环境扩展 
 #### docker 每次输入sudo的处理方案:
 ```
 1.创建docker组：sudo groupadd docker
