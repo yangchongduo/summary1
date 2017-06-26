@@ -8,12 +8,15 @@
 #### 如何停止image
 ```
 sudo service docker restart  这个命令会查到docker的pid（进程的id） kill 即可
- 
-```
+```     
+docker stop $(docker ps -a) 停止所有容器    
+docker rm $(docker ps -aq) 删除所有容器 
+docker rmi 镜像id           删除你想删的镜像   
+docker rmi -f    强制删除image    
 #### docker命令   
 >1 运行image 命令  
 ```
-docker run -d -p 8080:80 alexwhen/docker-2048  
+docker run -d -p 8080:80 alexwhen/docker-2048  
 ```  
 >2 在这个image 运行sh 这样就能够进入到命令 image 没有运行   
 ```
