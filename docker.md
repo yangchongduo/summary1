@@ -1,4 +1,16 @@
-#### docker命令   
+#### docker 每次输入sudo的处理方案:
+```
+1.创建docker组：sudo groupadd docker
+2.将当前用户加入docker组：sudo gpasswd -a ${USER} docker
+3.重启服务：sudo service docker restart
+4.刷新Docker成员：newgrp - docker
+```
+#### 如何停止image
+```
+sudo service docker restart  这个命令会查到docker的pid（进程的id） kill 即可
+ 
+```
+#### docker命令   
 >1 运行image 命令  
 ```
 docker run -d -p 8080:80 alexwhen/docker-2048  
