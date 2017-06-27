@@ -4,7 +4,9 @@
 >3 https://dashboard.daocloud.io/packages   
 > curl -sSL https://get.daocloud.io/daotools/set_mirror.sh | sh -s http://ef017c13.m.daocloud.io  
 > 改变docker的镜像源 超级无敌快  
-
+>4 mac 下如何改变镜像源呢？    
+软件上header上有个daemon=》Registry mirrors=》https://zuborsjg.mirror.aliyuncs.com(阿里自己的镜像元)    
+[阿里docker镜像源](https://cr.console.aliyun.com/#/imageList)    
 #### 在下载npm的时候服务器尽让卡，有可能是源的问题，默认是淘宝源，
 #### 可做一个自己开发用的node redis sql mongo的镜像，换电脑的话，如果开发的话，任何项目都基于这个环境扩展 
 #### docker 每次输入sudo的处理方案:
