@@ -26,6 +26,7 @@ open -e xxxx 同样的道理
 grep -r 查找的内容 路径   forexample  grep -R || -r yangchongduo fe.....    
 history | grep ''//  查看所有的历史命令，可以快速的查找命名   
 cat /etc/group|grep docker   查看docker这个用户组有多少人  
+grep -rin 'eee' ./xxx.js  在order.js文件下递归查询'eee'这个字符传
 ```
 
 #### 1、cd命令
