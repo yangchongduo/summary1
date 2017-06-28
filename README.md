@@ -325,7 +325,13 @@ cp  -rf
 ```
 #### [git](http://www.cnblogs.com/sinojelly/archive/2011/08/07/2130172.html)
 ----------------------------
-```       
+```        git diff   
+           对文件显示 /deleted new  diff 三种状态   
+	   切换分支 stash   
+	   git add .     
+	   git stash        
+	   git stash list 在其他分支也是有的   
+	   git stash pop stash{number}  //类似这样的   
            处理冲突：看git 提示需要进行rebase  就不需要git commit  
            git co 分支号；
 	   git rebase --abort
