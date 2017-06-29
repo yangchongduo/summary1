@@ -332,6 +332,7 @@ cp  -rf
 	   git stash        
 	   git stash list 在其他分支也是有的   
 	   git stash pop stash{number}  //类似这样的   
+	   git stash clear 清除所有的stash   
            处理冲突：看git 提示需要进行rebase  就不需要git commit  
            git co 分支号；
 	   git rebase --abort
