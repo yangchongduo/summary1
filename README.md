@@ -4,8 +4,9 @@
 
 #### es7 private
 
-#### pm2
+#### [pm2](https://cnodejs.org/topic/56e84480833b7c8a0492e20c)
 -------------------------------
+[为什么node的cluster可以监听一个port](https://cnodejs.org/topic/56e84480833b7c8a0492e20c)  
 ```
 总结:node的child_process 有三种模式 分别是 fork spawn exec ； fork 模式 可以实现启动多个进程；
     2: node的原生模块 cluster模块可以确认是child_process的fork 做的 (正好验证了fork 模式是可以实现多个进程的)；
