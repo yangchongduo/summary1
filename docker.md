@@ -6,7 +6,8 @@
 ### docker logs imageID 查看日志 能不能把日志弄到image外面来，这样别人使用的时候，image是干净的，数据卷
 ### docker exec -i -t imageID /bin/bash //进入image
 ### curl -i localhost:8888 
-### 如何通过数据卷映射到镜像外面   
+### 如何通过数据卷映射到镜像外面   ? 
+### docker内部的文件到底是做什么的?  
 #### [docker搭建node服务](http://www.jb51.net/article/91772.htm)
 >1 创建Dockerfile文件 vi Dockerfile
 ```
