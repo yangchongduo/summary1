@@ -1,3 +1,27 @@
+构建image
+### docker build -t mynodeapp . 
+### docker images
+### docker run -d -p 8888:8888 id
+### docker ps
+### docker logs imageID 查看日志 能不能把日志弄到image外面来，这样别人使用的时候，image是干净的，数据卷
+### docker exec -i -t imageID /bin/bash //进入image
+### curl -i localhost:8888  
+#### [docker搭建node服务](http://www.jb51.net/article/91772.htm)
+>1 创建Dockerfile文件 vi Dockerfile
+```
+FROM node   // 基础镜像
+ 
+# Create app directory
+RUN mkdir -p /home/Service 
+WORKDIR /home/Service
+ 
+# Bundle app source
+COPY . /home/Service  // 在镜像里面创建一个文件将本地所有的代码拷贝到image
+RUN npm install // 安装依赖包
+ 
+EXPOSE 8888 // 暴露端口
+CMD [ "npm", "start" ]  执行命令
+```
 #### docker 国内image源
 >1 一句话没听见，浪费了一天，因为docker的image 是国外的，必须通过国内image快，   
 >2 163 https://c.163.com/hub#/m/home/ 不建议使用      
