@@ -320,6 +320,7 @@ mkdir -p test/test1/test2/test3 可以套型创建所有的文件
 rm-rf 删除所有的文件
 cp -rf copy所有的文件
 mv -f 移动所有的文件
+mv a.txt b.txt -t 目的地    一次移动多个文件  
 mv test.txt newName.txt 重命名
 mv -u // 文件夹下所有的文件  单个文件不需要
 cp  -rf
