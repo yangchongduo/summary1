@@ -150,4 +150,37 @@ EXPOSE 443
 
 ```
 
+# 问题 ：
+启动容器镜像  
+###   进程管理工具 
+>1 supervisor  
 
+
+### Dockerfile
+>1 ENTRYPOINT 入口   docker运行的时候执行的命令  
+>add  可以拷贝地址，自动解压，tar包    
+>copy 
+>onbuild 对第一次build的时候不生效，在下一次弄新image生效，对测试和发布产品时特别好，感觉没用，因为应用的代码是放在宿主机下面的。。。
+>
+
+
+### 数据卷  
+docker run -itd --volume /Users/yangchongduo/Documents/test_koa:/home/Service -p 8000:3000  --name volume test  bash
+
+
+attach 不好用，退回的时候contaniner会挂掉，不好  
+exec  -it 交互式的 /bin/bash    
+
+
+###  进入容器内部
+docker exec -it test /bin/bash
+### 数据卷 -v  
+it 交互式  
+d 是背景  
+v 是数据卷  
+test：容器的名字或者id   
+bash shell    
+docker run -itd -v /tmp/data1:/tmp/data2 test bash  
+docker run -d -p 8888:3000 -name xxx imageID
+### docker的好处
+它让你可以将环境和配置放入到代码中加以部署。同样的Docker配置还可以用在各种环境中。这将基础设施需求与应用程序环境分离开来
