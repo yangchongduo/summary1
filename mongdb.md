@@ -8,10 +8,10 @@ db.createUser({user: "accountUser",pwd: "password",roles: [ "readWrite", "dbAdmi
 db.dropUser('accountUser'); //删除用户  
 show users //查看所有用户  
 show dbs  //查看数据库  
-show collections //查看集合  
-db.createColletion('newCollection') //创建集合  
-coll=db.getCollection('newCollection') //进如集合  
-coll.find(); //查看集合中所有数据  
+use xxx // 用哪个数据库  
+show collections //查看集合
+db.getCollectionNames() //查看所有集合的名字例如 [ "sessions", "users" ]    
+db.sessions.find() //查找集合所有的内容例如
 coll.find({name:'molin'}); //查看name=‘molin’的数据  
 coll.insert({name:'Admin',age:'23'}) //添加数据  
 coll.remove({age:'23'}); //删除数据  
