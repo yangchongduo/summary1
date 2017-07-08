@@ -1,3 +1,14 @@
+####  crypto
+hash算法实现方式有很多种，位数不同，对什么加密，以什么样的方式输出
+```
+const crypto = require('crypto')
+const data =crypto.createHash('md5').update('cd').digest('hex');
+console.log(data)
+const sha1 = crypto.createHash('sha1').update('cd').digest('hex')
+console.log(sha1)
+const sha256 = crypto.createHash('sha256').update('cd').digest('hex')
+console.log(sha256)
+```
 #### 加密
 ```
 //先加载crypto模块，创建md5哈希算法，指定要加密的字符串，再进行摘要按16进制输出 sha1  crypto
