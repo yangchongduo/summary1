@@ -1,3 +1,42 @@
+###  如何试下负载均衡
+>1 node原生的cluster模块是基于child_prcocess中的fork模式，net tcp服务
+```
+因为是fork出来的。进程之间是通过 IPC 来通信的, 以通过 IPC 在主进程和子进程之间相互传递服务器句柄.
+```
+>> ipc是如何建立的
+```
+在通过 child_process 建立子进程的时候, 是可以指定子进程的 env (环境变量) 的. 所以 Node.js 在启动子进程的时候, 主进程先建立 IPC 频道, 然后将 IPC 频道的 fd (文件描述符) 通过环境变量 (NODE_CHANNEL_FD) 的方式传递给子进程, 然后子进程通过 fd 连上 IPC 与父进程建立连接
+```
+>1 首先来说 pm2的fork模式是通过什么实现不知道？但是可以确定的一点是，他无法实现端口复用  
+>2 node原生模块cluster模块是基于child_process中的fork模式做的，cluster确实可以实现负载均衡，实现端口复用，也就是child_process是fork是可以实现负载均衡的，端口复用的  
+>3   
+```
+所有请求先同一经过内部TCP服务器。
+在内部TCP服务器的请求处理逻辑中，有负载均衡地挑选出一个worker进程，将其发送一个newconn内部消息，随消息发送客户端句柄。
+Worker进程接收到此内部消息，根据客户端句柄创建net.Socket实例，执行具体业务逻辑，返回。
+```
+  
+### 父子进程  
+>1 彼此监听message 时间类型，彼此通过send发送数据，message会获取信息，这也就是说的基于事件  
+>2  主进程先建立ipc通道，然后通过环境变量经通道描述传递给子进程，子进程然后根据通过通道描述连接这个ipc通道，这样父子进程就可以通过ipc通道连接，（现在还是监听不同的端口号）  
+>3 主进程监听80，其他子进程监听的不同的port，但是这样消耗的文件描述符太多  
+>4 如何处理文件描述符呢？句柄，send第二参数句柄，不在使用proxy  
+>5 通过各种事件机制 message exit 主进程就知道子进程退出这样就重启一个进程，  
+>6 那主进程是先启动进程还是子进程先退出呢？  
+>7 子进程退出之前，首先要做是process.send({act: 'suicide'});自杀信号，这样主进程是先生成一个进程，子进程在kill，这样能够达到平滑重启的目的； 
+>8 node原声cluster模块基于net tcp服务，和child_process的fork，然后发送句柄，实现了端口号监听，至于pm2中的重启次数，都可以进行限制  
+
+####  crypto
+hash算法实现方式有很多种，位数不同，对什么加密，以什么样的方式输出
+```
+const crypto = require('crypto')
+const data =crypto.createHash('md5').update('cd').digest('hex');
+console.log(data)
+const sha1 = crypto.createHash('sha1').update('cd').digest('hex')
+console.log(sha1)
+const sha256 = crypto.createHash('sha256').update('cd').digest('hex')
+console.log(sha256)
+```
 #### 加密
 ```
 //先加载crypto模块，创建md5哈希算法，指定要加密的字符串，再进行摘要按16进制输出 sha1  crypto

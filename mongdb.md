@@ -1,3 +1,45 @@
+### mongo基本的命令 
+|命令|备注|
+|---|---|
+|use runoob|创建数据库 runoob|
+|db|查看到底是哪个数据库|
+|show collections|sessions 集合|
+|db.sessions.find()|查看session集合的数据|
+| db.FirstCollection.insert({name:"jack",age:22})|集合中插入数据|
+|||
+|||
+**注意**:mongo的环境总是连接不上，我通过docker的image映射出来就ok 了
+###  请注意下面的大坑
+```
+const mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost:27017/runoob",{
+	useMongoClient: true,
+});
+
+const userSchema = new mongoose.Schema({
+	name:String, //姓名
+	sex:Number,
+	age:Number,//年龄
+});
+//这就是集合了Student
+// /Student 集合是复数  请查看 show collections 会出现一个集合 students这个集合
+var UserModel = mongoose.model("Student", userSchema);
+UserModel.create({ name:"xxx", age:7}, function(error,doc){
+	if(error) {
+		console.log(error);
+	} else {
+		console.log(doc);
+	}
+});
+UserModel.find({},(error, docs)=>{
+	if(error){
+		console.log(error)
+	}else {
+		console.log(docs)
+	}
+})
+
+```
 #### mac下安装坑  
 需要 用户创建文件夹的权限，否则是过不去的  
 sudo chown -R yangchongduo /data/db  
