@@ -1,4 +1,20 @@
-构建image
+```docker优势
+节省资源。
+           现状：公司服务运行在阿里云的ECS上，如果引入docker，会变成docker on vm上，无自有机房很难实现
+      
+     2. 快速部署，弹性扩容。
+            需求背景:   
+                   应对双十一需增加20台机器。
+         部署方式:
+                  1.op copy镜像，脚本部署。
+                   2.docker分发。时间会缩小很多。
+
+     3. 环境隔离:现状node服务，8核8个进程。接入dcoker之后，一个docker container内部跑8个进程，性能基本无差。
+
+      开发环境和测试环境是极力推广的。如线上通过docker部署，就不会出现‘环境’这样问题。
+      前端开发环境本身依赖node即可，现阶段不予以接入。
+ ```
+### 构建image
 ### docker build -t mynodeapp . 
 ### docker images
 ### docker run -d -p 8888:8888 id
