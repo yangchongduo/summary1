@@ -194,7 +194,11 @@ SELECT column_name,column_name FROM table_name
 SELECT * FROM mytable WHERE category_id=1;
 CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,adddate);
 ```
-### mysql  [(sequelize)](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471955049232be7492e76f514d45a2180e2c224eb7a6000)
+### orm[数据库连接池](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959821&idx=1&sn=4ede084b05ce81a9a5ddb87ec62434bb&chksm=bd2d07d18a5a8ec7726619dbb9f1e99df8239ebd07d5f01d748e01c08dd543f0a434945301c6&mpshare=1&scene=23&srcid=0715dcBedm9Hicsw70brEqkg#rd)  
+结论也很简单，服务启动的时候，先建立好若干连接Array[DBClientConnection]，  
+当有请求过来的时候，从Array中取出一个，执行下游操作，执行完再放回，从而避免反复的建立和销毁连接，以提升性能。  
+
+### mysql  [(sequelize)](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471955049232be7492e76f514d45a2180e2c224eb7a6000)
 步骤
 
 >1 docker run -p 3306:3306  -e MYSQL_ROOT_PASSWORD=123456 -d mysql /bin/bash    
