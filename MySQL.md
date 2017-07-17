@@ -194,3 +194,11 @@ SELECT column_name,column_name FROM table_name
 SELECT * FROM mytable WHERE category_id=1;
 CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,adddate);
 ```
+### mysql  [(sequelize)](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471955049232be7492e76f514d45a2180e2c224eb7a6000)
+步骤
+
+>1 docker run -p 3306:3306  -e MYSQL_ROOT_PASSWORD=123456 -d mysql /bin/bash  
+>2 docker exec -it it bash
+>3 mysql -u root -p
+>4 密码:123456
+>5 show databases; （必须有分号）;  
