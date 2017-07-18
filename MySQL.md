@@ -196,7 +196,9 @@ CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,a
 ```
 ### orm[数据库连接池](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959821&idx=1&sn=4ede084b05ce81a9a5ddb87ec62434bb&chksm=bd2d07d18a5a8ec7726619dbb9f1e99df8239ebd07d5f01d748e01c08dd543f0a434945301c6&mpshare=1&scene=23&srcid=0715dcBedm9Hicsw70brEqkg#rd)  
 结论也很简单，服务启动的时候，先建立好若干连接Array[DBClientConnection]，  
-当有请求过来的时候，从Array中取出一个，执行下游操作，执行完再放回，从而避免反复的建立和销毁连接，以提升性能。  
+当有请求过来的时候，从Array中取出一个，执行下游操作，执行完再放回，从而避免反复的建立和销毁连接，以提升性能。    
+### [事务:](https://itbilu.com/nodejs/npm/EJO6CcCM-.html)    
+概念: 事务主要用于处理操作量大，复杂度高的数据。比如说，在人员管理系统中，你删除一个人员，你即需要删除人员的基本资料，也要删除和该人员相关的信息，如信箱，文章等等，这样，这些数据库操作语句就构成一个事务！    
 
 ### mysql  [(sequelize)](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471955049232be7492e76f514d45a2180e2c224eb7a6000)
 步骤
