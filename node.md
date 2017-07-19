@@ -1,3 +1,26 @@
+### 再次更新一下关于模块的概念【以后在详细补充】  
+
+```
+//a.js
+ const data= ()=>{
+ 	console.log('xx')
+ }
+ module.exports=data
+// b.js
+const data = require('./a');
+data()
+```
+```
+//a.js 
+exports.data= ()=>{
+	console.log('xx')
+}
+//b.js 两种不同的写法
+const duo = require('./a');
+duo['data']()
+const {data} = require('./a')
+data()
+```  
 ### [Node.js内部代码架构](http://www.zcfy.cc/article/architecture-of-node-js-internal-codebase-508.html)
 - 所以某些功能（比如CPU密集操作）用C/C++写是明智的  
 - node.js只是针对I/O密集型操作提供了异步功能  
