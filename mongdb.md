@@ -1,3 +1,57 @@
+### 查询数据库异步处理  
+```
+const mongoose = require("mongoose");
+const db = mongoose.connect("mongodb://localhost:27017/test",{
+	useMongoClient: true,
+});
+db.on('error', console.error.bind(console, 'connection error:'));
+const userSchema = new mongoose.Schema({
+	name:String, //姓名
+	sex:Number,
+	age:Number,//年龄
+});
+//这就是集合了Student
+// /Student 集合是复数  请查看 show collections 会出现一个集合 students这个集合
+var UserModel = mongoose.model("Session", userSchema);
+// UserModel.create([
+// 	{ name:"xxx1", age:1 },
+// 	{ name:"xxx2", age:2 },
+// 	{ name:"xxx3", age:3 },
+// 	{ name:"xxx4", age:4 },
+// 	{ name:"xxx5", age:5 },
+// 	{ name:"xxx6", age:6},
+// 	{ name:"xxx7", age:7 },
+// 	{ name:"xxx8", age:8 },
+// 	{ name:"xxx9", age:9},
+// 	{ name:"xxx10",age:10 }
+// ], function(error,doc){
+// 	if(error) {
+// 		console.log(error);
+// 	} else {
+// 		// console.log(doc);
+// 	}
+// });
+
+// 方案1: 推荐  和 promise一样的 pendding 一样
+(async () => {
+	const data=  await UserModel.find();
+	console.log('data',data)
+})();
+// 方案2:
+UserModel.find({},(error, docs)=>{
+	if(error){
+		console.log(error)
+	}else {
+		console.log(docs)
+	}
+});
+// 方案3;
+(async ()=>{
+	 const data  = await (new UserModel());// 创建模型的实例 然后通过模型的实
+	 const res = await data.model('Session').find();
+	 console.log('res',res)
+})()
+```  
 ### mongo基本的命令 
 |命令|备注|
 |---|---|
