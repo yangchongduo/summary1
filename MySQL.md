@@ -201,8 +201,8 @@ CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,a
 概念: 事务主要用于处理操作量大，复杂度高的数据。比如说，在人员管理系统中，你删除一个人员，你即需要删除人员的基本资料，也要删除和该人员相关的信息，如信箱，文章等等，这样，这些数据库操作语句就构成一个事务！    
 
 ### mysql  [(sequelize)](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471955049232be7492e76f514d45a2180e2c224eb7a6000)
-步骤
-
+步骤 
+>0 docker exec -it id  mysql -u root -p    
 >1 docker run -p 3306:3306  -e MYSQL_ROOT_PASSWORD=123456 -d mysql /bin/bash    
 >2 docker exec -it it bash     
 >3 mysql -u root -p      
