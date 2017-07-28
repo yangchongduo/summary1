@@ -208,3 +208,27 @@ CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,a
 >3 mysql -u root -p      
 >4 密码:123456  
 >5 show databases; （必须有分号）;    
+###  语法练习
+```
+#select id , user_name from users where id in (30 ,32) order by id desc;
+#select id from users where id <> 10 order by id  desc limit 10;
+#select id from users where not id = 10 order by id desc limit 10;
+#select * from users where user_name like '%yang' order by user_name limit 10;
+#select * from users order by id desc limit 10;
+#select * from users where user_name like '%158' order by user_name desc limit 10;
+
+#select * from users where user_name like '[^158]%' order by id limit 10;
+#select concat (user_name,'(',id_number,')') as name_number from users order by id limit 10;  
+# select id,user_name ,id_number, id*id_number as number  from users order by id limit 10;
+#select now();
+#select upper(password) from users order by id desc limit 10;
+#select avg(id) as id_avg from users  where id < 100 order by id desc limit 10;
+#select count(id_number) as id_number from users where id <100;
+#select max(id_number) as max_number from users limit 10
+#select max(id) as max_id from users limit 100;  
+-- 不能有空格空格
+#select min(id) as min_id from users limit 100;
+#select sum(id) as sum_id from users limit 100;
+# select users.id,`users_safe_check`.`device_id` from `users` join `users_safe_check` on users.id=`users_safe_check`.id where users.id=195;
+
+```
