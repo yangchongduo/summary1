@@ -232,3 +232,27 @@ CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,a
 # select users.id,`users_safe_check`.`device_id` from `users` join `users_safe_check` on users.id=`users_safe_check`.id where users.id=195;
 
 ```
+```
+-- where 查询行 然后分组， having 分组过滤  随后排序
+#select gender,count(*)  as count_number from users where id >1000 group by gender having count(*) >100  order by count_number desc;
+-- 错误的
+#select users.`id`,id_number,(select count(*) from orders where orders.user_id = users.`id`) as order_number from users where order_number > 0 order by order_number  desc;
+-- 正确的
+#select users.`id`,id_number,(select count(*) from orders where orders.user_id = users.`id`) as order_number from users order by order_number  desc;
+# select * from users where id = 434257;
+#select * from orders limit 10;
+--  需要完全设置列名 等值连接
+#select address,order_no,id_number, truename from orders,users where orders.user_id = users.id;
+-- ** 注意使用 join on  连接条件使用特定的on 不是使用where这个
+-- select address,order_no,id_number ,truename from orders inner join users on  orders.`user_id` = users.id;
+-- 两张表以上 三张表查询
+-- select address,id_number,device_id from orders,users,`users_safe_check` where orders.user_id = users.id and users.id = users_safe_check.user_id
+-- as 是为了能够在多个地方使用
+-- select address,id_number from orders as o ,users as u where o.user_id = u.id and u.mobile = '18513275464';
+-- select o.*,id_number from orders as o,users ;
+-- address  是orders里面的字段， truename 是users里面的字段 需要问一下
+select address, truename from orders left outer join users on orders.`user_id` = users.id;
+-- select address, truename from orders right outer join users on orders.`user_id` = users.id;
+-- select address, truename from orders inner join users on orders.`user_id` = users.id;
+
+```
