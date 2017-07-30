@@ -254,5 +254,23 @@ CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,a
 select address, truename from orders left outer join users on orders.`user_id` = users.id;
 -- select address, truename from orders right outer join users on orders.`user_id` = users.id;
 -- select address, truename from orders inner join users on orders.`user_id` = users.id;
-
+```
+```
+-- select * from users where mobile = 18513275464;
+-- select gender,count(*) from users group by gender order by gender desc;
+-- select count(*) from users;
+-- select max(id) from users;
+-- select truename from users where id = 68131248;
+-- select min(id) from users;
+-- select avg(id) from users;
+-- union
+-- select gender,count(*) from users group by gender having count(*) > 100 order by id  desc;
+--  必须要指定哪张表
+-- select users.id,orders.address from users,orders limit 100 ;
+-- select users.truename,orders.address from orders inner join users on orders.user_id = users.id ;
+-- select address,order_no,id_number ,truename from orders inner join users on  orders.`user_id` = users.id;
+--  ********  必须是相同的列才可以 *****
+select mobile from users where gender ='N';
+union
+select mobile from orders where user_id <10000;
 ```
