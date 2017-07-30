@@ -21,6 +21,7 @@ duo['data']()
 const {data} = require('./a')
 data()
 ```  
+### [node的cluster模块的实现原理](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226726&idx=1&sn=6a78db1800c02212a1940d66e23ed5e8&chksm=bd495be28a3ed2f4a38d37c3699f6e7c00f0c3996c2e955fe087e8a572a068306f598be94424&mpshare=1&scene=24&srcid=07222z7V5T81MduY9qaRNvCJ&key=31a3a388ed6fa873984b6517b639a8b0140a330bc1dafb30dac709faa5170e50a50822ddea698106e39acd148f493e7c67e9b7bc7b772ee67430c25da62ed5857c7c7906c9edc7dea00c0558964c1610&ascene=0&uin=MjAzMDA2ODI2MA%3D%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.3+build(16D30)&version=12020110&nettype=WIFI&fontScale=100&pass_ticket=q46Nf5q5QVZhd6cjRyV6valXuYOKlN5ktNkVn1a3tlutiqkD92yFzSELUpp1Q2eM)  
 ### [Node.js内部代码架构](http://www.zcfy.cc/article/architecture-of-node-js-internal-codebase-508.html)
 - 所以某些功能（比如CPU密集操作）用C/C++写是明智的  
 - node.js只是针对I/O密集型操作提供了异步功能  
