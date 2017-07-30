@@ -58,3 +58,18 @@
 	}
 }
 ```
+### mac下配置 vscode配置ts cmd+shift+b 可以自动编译 webstrom 有watch file可自己执行
+```
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es6",
+		"noImplicitAny": false,
+		"sourceMap": true,
+		"allowJs": true
+	},
+	"exclude": [
+		"node_modules"
+	]
+}
+```
