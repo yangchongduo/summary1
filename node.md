@@ -1,3 +1,37 @@
+### 再次更新一下关于模块的概念【以后在详细补充】  
+
+```
+//a.js
+ const data= ()=>{
+ 	console.log('xx')
+ }
+ module.exports=data
+// b.js
+const data = require('./a');
+data()
+```
+```
+//a.js 
+exports.data= ()=>{
+	console.log('xx')
+}
+//b.js 两种不同的写法
+const duo = require('./a');
+duo['data']()
+const {data} = require('./a')
+data()
+```  
+### [node的cluster模块的实现原理](https://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651226726&idx=1&sn=6a78db1800c02212a1940d66e23ed5e8&chksm=bd495be28a3ed2f4a38d37c3699f6e7c00f0c3996c2e955fe087e8a572a068306f598be94424&mpshare=1&scene=24&srcid=07222z7V5T81MduY9qaRNvCJ&key=31a3a388ed6fa873984b6517b639a8b0140a330bc1dafb30dac709faa5170e50a50822ddea698106e39acd148f493e7c67e9b7bc7b772ee67430c25da62ed5857c7c7906c9edc7dea00c0558964c1610&ascene=0&uin=MjAzMDA2ODI2MA%3D%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.3+build(16D30)&version=12020110&nettype=WIFI&fontScale=100&pass_ticket=q46Nf5q5QVZhd6cjRyV6valXuYOKlN5ktNkVn1a3tlutiqkD92yFzSELUpp1Q2eM)  
+### [Node.js内部代码架构](http://www.zcfy.cc/article/architecture-of-node-js-internal-codebase-508.html)
+- 所以某些功能（比如CPU密集操作）用C/C++写是明智的  
+- node.js只是针对I/O密集型操作提供了异步功能  
+- 事件发生，观察者的回调函数会被加入消息队列 。只要消息队列有数据，循环函数 会不停取出它们压入执行堆栈 。注意，只有先前的消息处理完成循环函数 才会把下一个压入执行堆栈 
+- 执行堆栈中，如果发生I/O操作，会把它移交到libuv处理。libuv默认包含一个有四个工作线程的线程池，线程的数量可以设置。工作线程通过和Node.js的底层类库交互来执行比如数据传输、文件访问等操作。libuv处理完后再把事件加入消息队列，Node.js主线程继续处理。libuv以异步方式处理，Node.js主线程不会等待处理结果而是继续执行。libuv处理完成，加入消息队列，循环函数再次把事件压入执行堆栈，这就是Node.js一个消息处理的生命周期。  
+### 队列的概念在node中很重要，高并发的时候，请求数大于处理数的能力，就放在队列里面，慢慢的处理，node的异步队列的概念，js的异步队列的概念。  
+### 父子进程通信 所有东西请查看深入浅出node第九章  
+父进程在实际创建子进程之前，会创建ipc通过并监听它，然后才正真的创建出子进程，   
+并通过环境变量(NODE_CHANNEL_FD)告诉子进程这个ipc通道的文件描述符。  
+子进程在启动的过程中，根据环境描述符去连接这个已存在的IPC通道，从而完成父子进程之间的连接。    
 ###  如何试下负载均衡
 >1 node原生的cluster模块是基于child_prcocess中的fork模式，net tcp服务
 ```

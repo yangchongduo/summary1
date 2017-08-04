@@ -194,3 +194,83 @@ SELECT column_name,column_name FROM table_name
 SELECT * FROM mytable WHERE category_id=1;
 CREATE INDEX mytable_categoryid_userid_adddate ON mytable (category_id,user_id,adddate);
 ```
+### orm[数据库连接池](https://mp.weixin.qq.com/s?__biz=MjM5ODYxMDA5OQ==&mid=2651959821&idx=1&sn=4ede084b05ce81a9a5ddb87ec62434bb&chksm=bd2d07d18a5a8ec7726619dbb9f1e99df8239ebd07d5f01d748e01c08dd543f0a434945301c6&mpshare=1&scene=23&srcid=0715dcBedm9Hicsw70brEqkg#rd)  
+结论也很简单，服务启动的时候，先建立好若干连接Array[DBClientConnection]，  
+当有请求过来的时候，从Array中取出一个，执行下游操作，执行完再放回，从而避免反复的建立和销毁连接，以提升性能。    
+### [事务:](https://itbilu.com/nodejs/npm/EJO6CcCM-.html)    
+概念: 事务主要用于处理操作量大，复杂度高的数据。比如说，在人员管理系统中，你删除一个人员，你即需要删除人员的基本资料，也要删除和该人员相关的信息，如信箱，文章等等，这样，这些数据库操作语句就构成一个事务！    
+
+### mysql  [(sequelize)](https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001471955049232be7492e76f514d45a2180e2c224eb7a6000)
+步骤 
+>0 docker exec -it id  mysql -u root -p    
+>1 docker run -p 3306:3306  -e MYSQL_ROOT_PASSWORD=123456 -d mysql /bin/bash    
+>2 docker exec -it it bash     
+>3 mysql -u root -p      
+>4 密码:123456  
+>5 show databases; （必须有分号）;    
+###  语法练习
+```
+#select id , user_name from users where id in (30 ,32) order by id desc;
+#select id from users where id <> 10 order by id  desc limit 10;
+#select id from users where not id = 10 order by id desc limit 10;
+#select * from users where user_name like '%yang' order by user_name limit 10;
+#select * from users order by id desc limit 10;
+#select * from users where user_name like '%158' order by user_name desc limit 10;
+
+#select * from users where user_name like '[^158]%' order by id limit 10;
+#select concat (user_name,'(',id_number,')') as name_number from users order by id limit 10;  
+# select id,user_name ,id_number, id*id_number as number  from users order by id limit 10;
+#select now();
+#select upper(password) from users order by id desc limit 10;
+#select avg(id) as id_avg from users  where id < 100 order by id desc limit 10;
+#select count(id_number) as id_number from users where id <100;
+#select max(id_number) as max_number from users limit 10
+#select max(id) as max_id from users limit 100;  
+-- 不能有空格空格
+#select min(id) as min_id from users limit 100;
+#select sum(id) as sum_id from users limit 100;
+# select users.id,`users_safe_check`.`device_id` from `users` join `users_safe_check` on users.id=`users_safe_check`.id where users.id=195;
+
+```
+```
+-- where 查询行 然后分组， having 分组过滤  随后排序
+#select gender,count(*)  as count_number from users where id >1000 group by gender having count(*) >100  order by count_number desc;
+-- 错误的
+#select users.`id`,id_number,(select count(*) from orders where orders.user_id = users.`id`) as order_number from users where order_number > 0 order by order_number  desc;
+-- 正确的
+#select users.`id`,id_number,(select count(*) from orders where orders.user_id = users.`id`) as order_number from users order by order_number  desc;
+# select * from users where id = 434257;
+#select * from orders limit 10;
+--  需要完全设置列名 等值连接
+#select address,order_no,id_number, truename from orders,users where orders.user_id = users.id;
+-- ** 注意使用 join on  连接条件使用特定的on 不是使用where这个
+-- select address,order_no,id_number ,truename from orders inner join users on  orders.`user_id` = users.id;
+-- 两张表以上 三张表查询
+-- select address,id_number,device_id from orders,users,`users_safe_check` where orders.user_id = users.id and users.id = users_safe_check.user_id
+-- as 是为了能够在多个地方使用
+-- select address,id_number from orders as o ,users as u where o.user_id = u.id and u.mobile = '18513275464';
+-- select o.*,id_number from orders as o,users ;
+-- address  是orders里面的字段， truename 是users里面的字段 需要问一下
+select address, truename from orders left outer join users on orders.`user_id` = users.id;
+-- select address, truename from orders right outer join users on orders.`user_id` = users.id;
+-- select address, truename from orders inner join users on orders.`user_id` = users.id;
+```
+```
+-- select * from users where mobile = 18513275464;
+-- select gender,count(*) from users group by gender order by gender desc;
+-- select count(*) from users;
+-- select max(id) from users;
+-- select truename from users where id = 68131248;
+-- select min(id) from users;
+-- select avg(id) from users;
+-- union
+-- select gender,count(*) from users group by gender having count(*) > 100 order by id  desc;
+--  必须要指定哪张表
+-- select users.id,orders.address from users,orders limit 100 ;
+-- select users.truename,orders.address from orders inner join users on orders.user_id = users.id ;
+-- select address,order_no,id_number ,truename from orders inner join users on  orders.`user_id` = users.id;
+--  ********  必须是相同的列才可以 *****
+select mobile from users where gender ='N';
+union
+select mobile from orders where user_id <10000;
+```
