@@ -29,7 +29,7 @@ cat /etc/group|grep docker   查看docker这个用户组有多少人
 grep -rin 'eee' ./xxx.js  在order.js文件下递归查询'eee'这个字符传
 find . -name 名字
 shift + d 删除光标之前的文字
-shift + 0 删除光标之后的文字
+d + 0 删除光标之后的文字
 gg 头部
 G 尾部
 0 这一行的头部
