@@ -23,10 +23,22 @@ lsof -i:80 端口号 查看端口是否占用
 502 bad getway 找到nginx错误文件 监听这个文件。。。   
 open -a xxxx  打开一个软件或  者文本编辑器  
 open -e xxxx 同样的道理    
-grep -r 查找的内容 路径   forexample  grep -R || -r yangchongduo fe.....    
+grep -r 查找的内容 路径   forexample  grep 【-R || -r】 yangchongduo fe.....    
 history | grep ''//  查看所有的历史命令，可以快速的查找命名   
 cat /etc/group|grep docker   查看docker这个用户组有多少人  
 grep -rin 'eee' ./xxx.js  在order.js文件下递归查询'eee'这个字符传
+find . -name 名字
+shift + d 删除光标之前的文字
+d + 0 删除光标之后的文字
+gg 头部
+G 尾部
+0 这一行的头部
+A 这一行的尾部
+yy 复制一整行
+p 黏贴
+dd 删除
+v 进入可视化模式
+whereis svn 只用于程序名的搜索 🔍
 ```
 
 #### 1、cd命令
