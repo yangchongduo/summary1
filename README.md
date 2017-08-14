@@ -330,8 +330,9 @@ cp  -rf
 ```        git diff   
            对文件显示 /deleted new  diff 三种状态   
 	   切换分支 stash   
-	   git add .     
-	   git stash        
+	   git add .       
+	   git blame user.js（可以查看具体的每行非常牛）             
+	   git stash       
 	   git stash list 在其他分支也是有的   
 	   git stash pop stash{number}  //类似这样的   
 	   git stash clear 清除所有的stash   
