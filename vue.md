@@ -1,3 +1,8 @@
+#### emit and dispatch 区别
+```
+emit 只能绑定在 父组件上，events 无法监听到
+dispatch events可以监听到；
+```
 #### vue中操作数组  
 [].push()  
 #### vue1 events
