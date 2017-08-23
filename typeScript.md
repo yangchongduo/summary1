@@ -1,3 +1,25 @@
+### 泛型
+- 普通泛型函数
+```
+function indetity<T>(args:Array<T>):Array<T> {
+  return  args;
+}
+const myIndetity :<T>(arg:Array<T>)=>Array<T> =indetity;
+```
+- 泛型接口
+```
+interface indetityType {
+  <T>(args:Array<T>):Array<T>
+}
+const myIdentity2 : indetityType = indetity
+```
+- 把泛型参数当做接口的一个参数 
+```
+interface indetityType1<T>{
+  (args:Array<T>):Array<T>
+}
+const myIdentity3 :indetityType1<string> = indetity
+```
 ### 索引类型
 ```
 interface StringArray{
