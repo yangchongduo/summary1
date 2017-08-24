@@ -1,3 +1,18 @@
+#### () and {} 
+----------
+```
+// 这样可以起到隔离
+(function fn() {
+	console.log('xxx')})
+
+// fn()
+// 在es5 中 ()通过这种方式 隔离
+{var par = '1000'}
+console.log(par)
+// {} 如果是 let 或者 const 就会按照 es6的会计作用域来做
+{ const data = 10;}
+console.log(data)
+```
 #### var和let的区别
 ----------------
          ```
