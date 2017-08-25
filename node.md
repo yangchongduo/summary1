@@ -1,4 +1,11 @@
-### 再次更新一下关于模块的概念【以后在详细补充】  
+### debug
+```
+process.env.DEBUG = 'app:*'
+
+var debug = require('debug')('app:a')
+debug('sssss')
+```
+### 再次更新一下关于模块的概念【以后在详细补充】  
 
 ```
 //a.js
