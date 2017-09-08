@@ -61,7 +61,9 @@ Ctrl + t ：交换光标处和之前的字符
 Alt + t ：交换光标处和之前的单词
 Alt + Backspace：与 Ctrl + w ~~相同~~类似，分隔符有些差别 [感谢 rezilla 指正]
 ```
-
+sudo apt-get install htop    
+htop    
+ 
 #### 1、cd命令
 用于`切换当前目录`，它的参数是要切换到的目录的路径，可以是绝对路径，也可以是相对路径
 ```
