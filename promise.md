@@ -189,3 +189,28 @@ a.then((data)=>{
 })
 
 ```
+
+###  验证 promise data什么时候成为一个resolve的状态呢
+
+```
+console.time('1')
+const ff1 =  ()=>{
+  return new Promise((resolve,reject)=>{
+    setTimeout(resolve, 1000);
+  })
+}
+const ff3 = ()=>{
+  return new Promise((resolve,reject)=>{
+    setTimeout(resolve, 3000);
+  })
+}
+const data = ff1().then(()=>{
+  console.log('eeee');
+  return ff3()
+})
+console.log(data);
+data.then(()=>{
+  console.timeEnd('1')
+  console.log('rrrr');
+})
+```
