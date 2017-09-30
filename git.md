@@ -8,3 +8,7 @@
 - get reset --hard ${lastTagHash}  
 - npm install
 - pm2 gracefulReload 
+
+### 强制diff
+
+- git config --global alias.ci '!git diff  && git commit -am'
