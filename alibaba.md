@@ -23,9 +23,11 @@
 |koa2的洋葱机制是如何实现的 |反向实现的 函数的闭包 放在数组依次执行。函数的嵌套。|
 |为什么使用redux 如何实现的||
 |如何通过action 中的 type 找到对应的reducer|1：串行 在返回的action 里面继续 diapatch 其他action即可。2：并行 只要type一样即可|
-|平级组件是如何通讯的|redux 就是用来做这个事的|
+|平级组件是如何通讯的|1：有一个公共的父组件，将通用的属性，抽离成父组件的state，然后通过props，传递到子组件中 2：redux 就是用来做这个事的，建立一个全局的store，从store里面获取|
 |最难点 diff算法 如何diff||
 |左侧固定 右侧适应集中方法||
 
 #### react reducer
 - 每次dispatch 都会遍历所有的reducer，根据action中的type 执行，如果type项目就都会执行。
+
+#### (平级组件是如何通讯的)[https://segmentfault.com/q/1010000006631206/a-1020000006632360]
