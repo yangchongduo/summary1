@@ -30,4 +30,4 @@
 #### react reducer
 - 每次dispatch 都会遍历所有的reducer，根据action中的type 执行，如果type项目就都会执行。
 
-#### (平级组件是如何通讯的)[https://segmentfault.com/q/1010000006631206/a-1020000006632360]
+#### [平级组件是如何通讯的](https://segmentfault.com/q/1010000006631206/a-1020000006632360)
