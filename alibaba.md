@@ -22,7 +22,10 @@
 |---|----|
 |koa2的洋葱机制是如何实现的 |反向实现的 函数的闭包|
 |为什么使用redux 如何实现的||
-|如何通过action 中的 type 找到对应的reducer|这是源码性质的了  这个是重点，不同reducer之前的调用|
+|如何通过action 中的 type 找到对应的reducer|1：串行 在返回的action 里面继续 diapatch 其他action即可。2：并行 只要type一样即可|
 |平级组件是如何通讯的|redux 就是用来做这个事的|
 |最难点 diff算法 如何diff||
 |左侧固定 右侧适应集中方法||
+
+#### react reducer
+- 每次dispatch 都会遍历所有的reducer，根据action中的type 执行，如果type项目就都会执行。
