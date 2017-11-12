@@ -28,6 +28,20 @@
 |左侧固定 右侧适应集中方法||
 
 #### react reducer
-- 每次dispatch 都会遍历所有的reducer，根据action中的type 执行，如果type项目就都会执行。
+- 每次dispatch 都会遍历所有的reducer，根据action中的type 执行，如果type相同就都会执行。
+- action中可以继续action，promise-thunk，promise-middle
+- redux-saga可代替 promise-thunk 。 实现yeild作用
+
+- logout是一个action，是一个函数action，第一个参数是dispatch， 是由promise-thunk的原因
+- vuex直接支持 dispatch
+```
+export const logout = () => (dispatch) => {
+  local.clear('userInfo', 'accessToken', 'refreshToken');
+  dispatch({ type: LOGOUT });
+  dispatch(push('/login'));
+};
+```
 
 #### [平级组件是如何通讯的](https://segmentfault.com/q/1010000006631206/a-1020000006632360)
+- 将两个组件共有的部分，抽离成父组件的state，然后通过props传递到子组件中。
+- redux中，统一的store管理。

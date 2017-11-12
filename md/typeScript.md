@@ -1,3 +1,7 @@
+### 好处
+
+- typescript的开发体验确实很好，确实极大提升了代码可维护性
+
 ### 泛型
 - 普通泛型函数
 ```
@@ -68,3 +72,4 @@ function fn(params:string):void {
 - let value:any = 'my name is xx'
 - let valueLetgth:number= (value as string).length
 - let valueLetgth1:number = (<string>value).length
+

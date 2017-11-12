@@ -14,4 +14,5 @@
 11:Vue.js devtools
 12:WEB前端助手(FeHelper)
 13：tampermonkey 可以做很多事儿,以前我们用它做前端自动化测试 注意:操作哪个网站就在哪个网站假如脚本
+14：HostAdmin  管理host工具
 ```
