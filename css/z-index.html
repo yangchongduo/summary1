@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div {
+      width: 100px;
+      height: 100px;
+    }
+
+    .div1 {
+      /* 没有position: relative; 是没有效果的 */
+      /* position: relative; */
+      z-index: 100;
+      background: darkblue
+    }
+
+    .div2 {
+      position: relative;
+      top: -100px;
+      background: darkgoldenrod
+    }
+  </style>
+</head>
+
+<body>
+  <pre>
+       Z-index 仅能在定位元素上奏效（例如 position:absolute;）
+  </pre>
+  <div class="div1"></div>
+  <div class="div2"></div>
+</body>
+
+</html>
