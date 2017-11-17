@@ -1,17 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    .img {
+      width: 100px;
+      height: 100px;
+    }
+  </style>
+  <!-- <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script> -->
 </head>
+
 <body>
   <div>11111</div>
+  <!-- <img id="s_lg_img" src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo/logo_white.png" width="270" height="129"> -->
   <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
   <div>2222222</div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <div>3333 </div>
 </body>
+
 </html>
 <!-- 111 会先出来，浏览器遇到js，会解析这个js，渲染引擎就会得到阻止，  如果放在下面就不会 也就是所说的 js一般都会放在底部 -->
 <!-- <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script> -->
+<script>
+  //  一些辅助行js 加载
+  window.addEventListener('load', () => {
+    console.log('eeeee');
+  })
 
+
+</script>
