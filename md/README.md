@@ -60,24 +60,7 @@
 >2 点击事件是如何从浏览器到数据库，通过发送请求，对，调用一个接口，
 #### 页面性能分析数据（后面继续补充）
 >1 当页面加载完的时候，调用一个接口，发送请求，获取数据， 
-#### git如何配置自己的config
-```
-git config --global --add user.email "mebusw@163.com"    
-git config --global --add user.name "mebusw"  
-git config --global alias.co checkout  
-git config --global alias.br branch  
-git config --global alias.ci commit  
-git config --global alias.st status  
-git config --global alias.last 'log -1 HEAD'  
-git config --global color.diff auto  
-git config --global color.status auto  
-git config --global color.branch auto  
-git config --global alias.co checkout  
-git config --global core.quotepath false  
-git config --global merge.tool kdiff3  
-git config --global meregtool.kdiff3.path "/usr/bin/kdiff3"  
-git config --global alias.visual "!gitk
-```
+
 #### true and false 赋值
 ```
 var  end = Date.parse('2017/06/20 00:00:00');  
@@ -325,56 +308,17 @@ mv test.txt newName.txt 重命名
 mv -u // 文件夹下所有的文件  单个文件不需要
 cp  -rf
 ```
-#### [git](http://www.cnblogs.com/sinojelly/archive/2011/08/07/2130172.html)
-----------------------------
-```        git diff   
-           对文件显示 /deleted new  diff 三种状态   
-	   切换分支 stash   
-	   git add .       
-	   git blame user.js（可以查看具体的每行非常牛）             
-	   git stash       
-	   git stash list 在其他分支也是有的   
-	   git stash pop stash{number}  //类似这样的   
-	   git stash clear 清除所有的stash   
-           处理冲突：看git 提示需要进行rebase  就不需要git commit  
-           git co 分支号；
-	   git rebase --abort
-	   将本次所有的操作全部取消回到最初的状态 git checkout .  
-           git status 找到哪个文件  git checkout xxxx.js||vue 即可
-           1 git reset HEAD . 场景：做完项目之后 需要git diff 如果忘了，就git add .  在没有commit 之前，回退使用这个，可再次查看diff
-           git commit 合并多次提交 
-           git rebase -i  版本号 假如将最新的三个合并成一个。。 就需要写第四个版本
-           3）进入之后 i  第一个pick 不用修改 剩下的全部修改成 s 保存退出
-           4）显示提交的注释 注释掉其他的，修改 commit message 就可以了  保存 退出
-           git log --oneline
-           假如中间不想合并的话 git rebase --abort
-           建立分支  git checkout dev 2)git branch dev 这样是可以的  
-           git checkout -b dev  会讲原先的分支给删除
-           1:  在任何 git add .和 git commit -m 'xxx' 都得需要git status or git diff 不同之处
-            window 下新建分支(dev)之后  然后 操作， 在没有git commit-m 'xxx' 时候 切换到master 分支 ，dev分支的内容还是有的，
-            现在重新切换到 dev分支 然后 git add .  git commit -m 'dev' ,这样在切换到master 分支，这个时候dev分支的内容就没了
-            ls -a 查看所有的文件
-            在dev分支上 git diff master 就可以看到两个分支有什么不同
-           
-            git  branch --all查看所有的分支 
-            git branch  是本地分支
-            场景 git commit 之后想消除就 回退版本号 git reflog 然后  git reset--hard 版本号
-            假如 想研究代码但是不想 在看一个代码 就可以 弄个分支 然后研究代码 ，最后不要提交就可以了
-              删除分支 git branch -d 分支
-              强制删除 代码 git branch -D 分支
-            git add .
-            git commit -m "first commit"
-            git remote add origin https://github.com/yangchongduo/xxx.git
-            git push -u origin master
-```
+
 
 #### 架构  13种属性 5种大风格 21种具体实例的架构风格 
 -----------------------------
-              我们将按照架构属性来对架构风格进行评估    
-              架构风格是一组协作的架构约束  
-              属性是由架构中的约束所导致的，约束往往是由在架构元素的某个方面   
-              应用软件工程原则  来驱动的    
-              http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF        
+我们将按照架构属性来对架构风格进行评估    
+架构风格是一组协作的架构约束  
+属性是由架构中的约束所导致的，约束往往是由在架构元素的某个方面   
+应用软件工程原则  来驱动的 
+http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7qgAucdPSsPUZoEAClv8WVFOCYHJxoGwMdjI8_VF-EFaVocsMtDLtb_cUSTLV6MrJ7hTXPnREE6pIR5JwF        
+
+
 #### nginx
 ------------------------------
 ```
