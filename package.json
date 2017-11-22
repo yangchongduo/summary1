@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha -t 5000"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,11 @@
   },
   "homepage": "https://github.com/yangchongduo/summary#readme",
   "dependencies": {
+    "chai": "^4.1.2",
     "mocha": "^4.0.1",
-    "request": "^2.83.0"
+    "node-fetch": "^1.7.3",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "sinon": "^4.1.2"
   }
 }
