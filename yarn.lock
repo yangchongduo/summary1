@@ -570,6 +570,10 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vue@^2.5.8:
+  version "2.5.8"
+  resolved "http://registry.npm.taobao.org/vue/download/vue-2.5.8.tgz#f855c1c27255184a82225f4bef225473e8faf15b"
+
 wrappy@1:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/wrappy/download/wrappy-1.0.2.tgz#b5243d8f3ec1aa35f1364605bc0d1036e30ab69f"

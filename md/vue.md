@@ -80,3 +80,100 @@ http://www.imooc.com/article/14466
 ```
 https://github.com/ccforward/vue-ssr
 ```
+
+
+
+#### vue中的complier
+
+- html.indexOf('<');
+- 会经过各种 `注释性的代码`
+- parseStartTag 通过正则 `<div` 字符串 
+- 转成ast 然后成为虚拟dom。
+- `虚拟dom更新`：
+ - 组件div相同。 属性的更新：  `el.removeAttribute()` 和 `el.setAttribute()`
+ - 文本的更新   node.textContent = text;
+
+
+```
+function patch(oldVnode, vnode, hydrating, removeOnly, parentElm, refElm) {
+        if (!vnode) {
+          if (oldVnode) {
+            invokeDestroyHook(oldVnode);
+          }
+          return
+        }
+
+        var elm, parent;
+        var isInitialPatch = false;
+        var insertedVnodeQueue = [];
+
+        if (!oldVnode) {
+          // empty mount (likely as component), create new root element
+          isInitialPatch = true;
+          createElm(vnode, insertedVnodeQueue, parentElm, refElm);
+        } else {
+          var isRealElement = isDef(oldVnode.nodeType);
+          if (!isRealElement && sameVnode(oldVnode, vnode)) {
+            // patch existing root node
+            patchVnode(oldVnode, vnode, insertedVnodeQueue, removeOnly);
+          } else {
+            if (isRealElement) {
+              // mounting to a real element
+              // check if this is server-rendered content and if we can perform
+              // a successful hydration.
+              if (oldVnode.nodeType === 1 && oldVnode.hasAttribute('server-rendered')) {
+                oldVnode.removeAttribute('server-rendered');
+                hydrating = true;
+              }
+              if (hydrating) {
+                if (hydrate(oldVnode, vnode, insertedVnodeQueue)) {
+                  invokeInsertHook(vnode, insertedVnodeQueue, true);
+                  return oldVnode
+                } else {
+                  warn(
+                    'The client-side rendered virtual DOM tree is not matching ' +
+                    'server-rendered content. This is likely caused by incorrect ' +
+                    'HTML markup, for example nesting block-level elements inside ' +
+                    '<p>, or missing <tbody>. Bailing hydration and performing ' +
+                    'full client-side render.'
+                  );
+                }
+              }
+              // either not server-rendered, or hydration failed.
+              // create an empty node and replace it
+              oldVnode = emptyNodeAt(oldVnode);
+            }
+            // replacing existing element
+            elm = oldVnode.elm;
+            parent = nodeOps.parentNode(elm);
+            createElm(vnode, insertedVnodeQueue, parent, nodeOps.nextSibling(elm));
+
+            if (vnode.parent) {
+              // component root element replaced.
+              // update parent placeholder node element, recursively
+              var ancestor = vnode.parent;
+              while (ancestor) {
+                ancestor.elm = vnode.elm;
+                ancestor = ancestor.parent;
+              }
+              if (isPatchable(vnode)) {
+                for (var i = 0; i < cbs.create.length; ++i) {
+                  cbs.create[i](emptyNode, vnode.parent);
+                }
+              }
+            }
+
+            if (parent !== null) {
+              removeVnodes(parent, [oldVnode], 0, 0);
+            } else if (isDef(oldVnode.tag)) {
+              invokeDestroyHook(oldVnode);
+            }
+          }
+        }
+
+        invokeInsertHook(vnode, insertedVnodeQueue, isInitialPatch);
+        return vnode.elm
+      }
+```
+
+
