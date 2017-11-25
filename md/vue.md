@@ -92,7 +92,7 @@ https://github.com/ccforward/vue-ssr
 - `虚拟dom更新`：
  - 组件div相同。 属性的更新：  `el.removeAttribute()` 和 `el.setAttribute()`
  - 文本的更新   node.textContent = text;
-
+-  属性放在data里面 包含 id class style  等等一共 6个等等
 
 ```
 function patch(oldVnode, vnode, hydrating, removeOnly, parentElm, refElm) {
