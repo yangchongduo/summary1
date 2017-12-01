@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/yangchongduo/summary#readme",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "chai": "^4.1.2",
     "mocha": "^4.0.1",
     "node-fetch": "^1.7.3",

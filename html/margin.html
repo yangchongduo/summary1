@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>margin 塌陷问题 </title>
+  <style>
+    .top {
+      width: 100px;
+      height: 100px;
+      background: darkblue;
+      margin-bottom: 100px;
+    }
+
+    .bottom {
+      width: 50px;
+      height: 50px;
+      background: red;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+  </div>
+  <div class="bottom"></div>
+
+</body>
+
+</html>

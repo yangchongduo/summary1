@@ -57,3 +57,63 @@ export const logout = () => (dispatch) => {
 #### [平级组件是如何通讯的](https://segmentfault.com/q/1010000006631206/a-1020000006632360)
 - 将两个组件共有的部分，抽离成父组件的state，然后通过props传递到子组件中。
 - redux中，统一的store管理。
+
+#### 阿里
+
+|问题|结果|反思|
+|---|---|---|
+|标准模式是那个版本产生的|5||
+|拖拽的几种实现方式|||
+|amd 模块 打包的区别|||
+|浏览器的渲染机制 不是 解析机制|||
+|http 协议是如何实现的|||
+|nginx 和redis 的作用|||
+|页面优化性能|cdn 图片 webp 静态文件【没有http请求】||
+|document.write 和 innerHtml 有什么区别|||
+||||
+|position 几个值|||
+|dom 二级事件的浏览器的机制|||
+|css3 transfome|||
+|水平 垂直居中|三种实现方式||
+|继承|||
+|webpack 打包 需要注意的东西|||
+|webpack 开发环境和线上环境不同|开发环境有的 或者没有的||
+|devtools #suorce-map的作用|Source map就是一个信息文件，里面储存着位置信息。也就是说，转换后的代码的每一个位置，所对应的转换前的位置。||
+|addEventlister|第三个参数的意义| true的使用场景|
+|为什么actchEvent 没有第三是参数|||
+|es6 的 箭头函数 ... 使用场景|||
+|es6 extend是如何继承的|其实这个需要知道||
+|typescript|好处 性能是否比现在的js好||
+|无限加载 如何优化|节流||
+|页面抖动如何处理|节流 时间撮||
+|react 如何理解生命周期的概念|||
+|react shouldupdate 如何优化|||
+|willmount didmount |那个阶段获取真实dom||
+|为什么react  虚拟diff 对比 为什么要比 jquery 的那种直接获取dom 要好|||
+|redux 和react 是如何结合在一起的|||
+|react是否可以创建多个store|||
+|let 和var的区别|||
+|严格模式|ECMAscript 5 增加了严格模式|变量提升 这些功能都没有了|
+
+
+#### let and var 的区别
+
+- 没有变量提升
+- 重复声明一个变量 let 和const 不能变量不能重复声明
+- 变量作用域的范围不一样
+```
+"use strict";
+(function (params) {
+
+  {
+    let name = '';
+    var data= '';
+
+  }
+  console.log('name',data);
+  console.log('name',name);
+})()
+```
+#### => vs 普通函数
+- 函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。
+- 实际原因是箭头函数根本没有自己的this，导致内部的this就是外层代码块的this。正是因为它没有this，所以也就不能用作构造函数。

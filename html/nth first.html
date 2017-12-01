@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+				content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		body,ul,li{
+			margin: 0;
+			padding: 0;
+		}
+
+		ul{
+			list-style: none;
+		}
+
+		.clear:after{
+			display: block;
+			content: '';
+			clear: both;
+			zoom: 1;
+		}
+		li:nth-of-type(2){
+			background: darkgray;
+		}
+
+		li:first-child{
+			background: darkblue;
+		}
+		li{
+			width: 30px;
+			float: left;
+			height: 20px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+<body>
+<ul class="clear">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+</ul>
+
+</body>
+</html>
