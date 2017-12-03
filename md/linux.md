@@ -59,6 +59,7 @@ Alt + u ：从光标处更改为全部大写的单词
 Alt + l ：从光标处更改为全部小写的单词
 Ctrl + t ：交换光标处和之前的字符
 Alt + t ：交换光标处和之前的单词
+sudo lsof -i tcp:port 某一个端口号
 Alt + Backspace：与 Ctrl + w ~~相同~~类似，分隔符有些差别 [感谢 rezilla 指正]
 ```
 sudo apt-get install htop    
