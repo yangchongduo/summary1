@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>根本是定位 绝对定位 </title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      -webkit-user-select: none;
+
+    }
+
+    #drag {
+      width: 100px;
+      height: 100px;
+      background: darkgray;
+      position: absolute;
+      top: 0;
+      left: 0;
+      cursor: move;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="drag"></div>
+</body>
+
+</html>
+<script>
+  // touc
+  // 
+  // const 
+  /**
+   * 30px是滑动还是点击
+   * 750ms是长按还是点击；
+   */
+  const cancle = function cancle() {
+
+  }
+  const down = function (e) {
+    // 现在就一个触点 同时也可以有多个
+    console.log(e.changedTouches[0])
+    // this 还是拖拽的元素 e 还是事件对象；
+    // clientX 是一个屏幕的鼠标坐标
+    this.mx = e.changedTouches[0].pageX;
+    this.my = e.changedTouches[0].pageY;
+    this.x = this.offsetLeft;
+    this.y = this.offsetTop;
+
+  }
+  const move = function (e) {
+    this.style.top = e.changedTouches[0].pageY - this.my + this.x + 'px';
+    this.style.left = e.changedTouches[0].pageX - this.mx + this.y + 'px';
+  }
+  const up = function (e) {
+    this.style.top = e.changedTouches[0].pageY - this.my + this.y + 'px';
+    this.style.left = e.changedTouches[0].pageX - this.mx + this.x + 'px';
+  }
+  const drag = document.getElementById('drag');
+  drag.addEventListener('touchstart', down, false);
+  drag.addEventListener('touchmove', move, false);
+  drag.addEventListener('touchend', up, false)
+  drag.addEventListener('touchcancel', cancle, false);
+
+</script>

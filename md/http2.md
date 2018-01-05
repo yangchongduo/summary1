@@ -50,7 +50,7 @@ http1自身的问题:
 
 ###  请求头
 - http1: 在每次请求时,都需要将一大堆头部带上,甚至带上cookie这灰常大的内容
-- http2:因为头部的更替不是很频繁,那我就在Server端做个缓存呗,在你这次连接有效的时间里面, client就用重复的发送请求头了. 这就是HTTP2的HPACK压缩方式.HPACK压缩会经过两步:
+- http2: 因为头部的更替不是很频繁,那我就在Server端做个缓存呗,在你这次连接有效的时间里面, client就用重复的发送请求头了. 这就是HTTP2的HPACK压缩方式.HPACK压缩会经过两步:
 
 
 - 传输的value,会经过[Huffman coding](http://baike.baidu.com/link?url=vFroMkFHh3TFgE-B9iIFXboG_4zrwJoW5hoB_HnNC47-XO9XamQrM7WWFdznXx-iELkgxalf3HKPNHkan8CGG7HlAALIhasED8F3K2BC5RaSU_eejIo7onSyKSBtqa2ccgQ4C6WGd0_lGPFXN24EgL5EBGQyK7AGpfrNwX5MPU_cPyK8JtlFogOi6Shds0JP)[哈夫曼编码] 一遍来节省资源.  
@@ -69,7 +69,7 @@ ok, 那这样就有一个问题, 第一次的请求,肯定是最慢的.因为他
  
 
 
-### [HSPS](https://47.94.95.52:9991/option)
+### [HSTS](https://47.94.95.52:9991/option)
 - 服务器开启 HSTS 的方法是，当客户端通过HTTPS发出请求时，在服务器返回的 HTTP 响应头中包含 Strict-Transport-Security 字段。非加密传输时(http://xxxx)设置的HSTS字段无效
  ```
  Strict-Transport-Security: max-age=31536000; includeSubDomains(可选参数，如果指定这个参数，表明这个网站所有子域名也必须通过 HTTPS 协议来访问。)
@@ -166,3 +166,22 @@ openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt
 [root@admin nginx-1.2.6]# cd /usr/local/nginx/sbin 
 [root@admin sbin]# ./nginx 
  ```
+
+
+#### 总结
+
+    1.HTTP2使用的是二进制传送，HTTP1.X是文本（字符串）传送。
+
+    大家都知道HTTP1.X使用的是明文的文本传送，而HTTP2使用的是二进制传送，二进制传送的单位是帧和流。帧组成了流，同时流还有流ID标示，通过流ID就牵扯出了第二个区别
+
+    2.HTTP2支持多路复用
+
+    因为有流ID，所以通过同一个http请求实现多个http请求传输变成了可能，可以通过流ID来标示究竟是哪个流从而定位到是哪个http请求
+
+    3.HTTP2头部压缩
+
+    HTTP2通过gzip和compress压缩头部然后再发送，同时客户端和服务器端同时维护一张头信息表，所有字段都记录在这张表中，这样后面每次传输只需要传输表里面的索引Id就行，通过索引ID就可以知道表头的值了
+
+    4.HTTP2支持服务器推送
+
+    HTTP2支持在客户端未经请求许可的情况下，主动向客户端推送内容

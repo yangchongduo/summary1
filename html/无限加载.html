@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+  <script src="./tempalte.js"></script>
   <title>Document</title>
   <style>
     .slide .img {
@@ -32,6 +34,32 @@
 </html>
 <script>
 
+</script>
+<script id="tpl" type="text/html">
+  <!-- <ul>
+    <%for(var i = 0; i < dataList.length; i++) {%>
+    <li><%:=dataList[i].name%></li>
+    <%}%>
+  </ul> -->
+  
+
+   <% dataList.forEach(function (v) { %>
+        <!-- <div > -->
+            <li id="s-<%:=Math.round(Math.random()*(10000))%>" class="slide">
+                <a href="<%=v.href%>">
+                    <img class="img" src='data:img/jpg;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEXs7Oxc9QatAAAACklEQVQI12NgAAAAAgAB4iG8MwAAAABJRU5ErkJggg==' 
+                    data-src="<%=v.src%>">
+                    </img>
+                    <strong><%:=v.title %></strong>
+                    <span class="writer"><%:=v.writer %></span>
+                    <span class="good-num"><%:=v.succNum %></span>
+                </a>
+            </li>
+        <!-- </div> -->
+    <% }) %>
+</script>
+<script>
+
   (function () {
     var fetching = false;
     var page = 1;
@@ -55,8 +83,7 @@
         // 直接获取offTop，offsetHeight值
         offTop = itemMap[id].offTop;
         offsetHeight = itemMap[id].offsetHeight;
-      }
-      else {
+      } else {
         // 设置该节点，并且设置节点属性：node，offTop，offsetHeight
         node = document.getElementById(id);
         // offsetHeight是自身元素的高度
@@ -64,11 +91,14 @@
         // 元素的上外缘距离最近采用定位父元素内壁的距离
         offTop = parseInt(node.offsetTop);
       }
-
+      // offTop + offsetHeight 
+      // window.scrollY - 1000
+      // window.scrollY + innerHeight + 600
       if (offTop + offsetHeight > topViewPort && offTop < bottomViewPort) {
         return true;
       }
       else {
+        console.log('--------------');
         return false;
       }
     }
@@ -76,6 +106,7 @@
     // ....更新DOM缓存
 
     function updateItemCache(node) {
+      // debugger
       var list = node.querySelectorAll('.slide');
       var len = list.length;
       slideCache = [];
@@ -101,40 +132,44 @@
       else {
         fetching = true;
       }
-      ajax({
-        url: (!location.pathname.indexOf('/m/') ? '/m' : '')
-          + '/list/asyn?page=' + page + (+new Date),
-        timeout: 300000,
-        dataType: 'json'
-      }).then(function (data) {
-        if (data.errno) {
-          return;
-        }
-        console.time('render');
+      $.ajax({
+        url: ' https://easy-mock.com/mock/59a8fd8e83eb501241b25220/example//must',
+        // timeout: 300000,
+        dataType: 'json',
+        success: function (data) {
+          if (data.errno) {
+            return;
+          }
+          console.time('render');
+          var dataList = data.data;
+          // debugger
+          var len = dataList.length;
+          var ulContainer = document.getElementById('expList');
+          var str = '';
+          var frag = document.createElement('div');
 
-        var dataList = data.data.list;
-        var len = dataList.length;
-        var ulContainer = document.getElementById('expList');
-        var str = '';
-        var frag = document.createElement('div');
-
-        var tpl = __inline('content.tmpl');
-        for (var i = 0; i < len; i++) {
-          str = tpl({ dataList: dataList });
+          var tpl = window.template(document.getElementById('tpl').innerHTML);
+          for (var i = 0; i < len; i++) {
+            str = tpl({ dataList: dataList });
+          }
+          frag.innerHTML = str;
+          ulContainer.appendChild(frag);
+          // 更新缓存 新创建的那个接节点
+          updateItemCache(frag);
+          // 已经拉去完毕，设置标识为true
+          fetching = false;
+          // 强制触发
+          handleScroll(null, true);
+          page++;
+          console.timeEnd('render');
         }
-        frag.innerHTML = str;
-        ulContainer.appendChild(frag);
-        // 更新缓存
-        updateItemCache(frag);
-        // 已经拉去完毕，设置标识为true
-        fetching = false;
-        // 强制触发
-        handleScroll(null, true);
-        page++;
-        console.timeEnd('render');
-      }, function (xhr, type) {
-        console.log('Refresh:Ajax Error!');
-      });
+      })
+      // .then(function (data) {
+      //   debugger
+
+      // }, function (xhr, type) {
+      //   console.log('Refresh:Ajax Error!');
+      // });
     }
 
     // ...懒加载实现
@@ -175,11 +210,12 @@
       if (!force && lastScrollY === window.scrollY) {
         window.setTimeout(handleScroll, 100);
         return;
-      }
-      else {
+      } else {
         // 更新文档滚动位置
         lastScrollY = window.scrollY;
       }
+      // debugger
+
       scrollY = window.scrollY;
       // 浏览器窗口的视口（viewport）高度赋值
       innerHeight = window.innerHeight;
@@ -189,6 +225,7 @@
 
       // 判断是否需要加载
       // document.body.offsetHeight;返回当前网页高度 
+      // 大于200px 就开始请求
       if (window.scrollY + innerHeight + 200 > document.body.offsetHeight) {
         fetchContent();
       }

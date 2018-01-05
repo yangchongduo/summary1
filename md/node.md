@@ -1,3 +1,7 @@
+### nvm 
+-   nvm install stable 【升级为最稳定版本】
+-  nvm alias default v6.10.3  【默认版本号】
+
 ### debug
 ```
 process.env.DEBUG = 'app:*'

@@ -6,3 +6,6 @@
 ### react生命周期
 - componentWillMount
 - componentDidMount dom已经挂在了 页面已经渲染
+
+
+    

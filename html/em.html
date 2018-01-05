@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>em是为字体而生的</title>
+  <style>
+    /* .p1{
+      width: 100px;
+      height: 100px;
+      font-size: 14px;
+      line-height: 26px;
+    }
+    .s1{
+      font-size: 20px;
+      width: 2em;
+      line-height: 2em;
+      background: darkgrey;
+    } */
+    .p1 {
+      font-size: 16px;
+      line-height: 32px;
+
+    }
+
+    .s1 {
+      /* 就近 font-size 没有找父级 如果父级 就找 浏览器默认的*/
+      /* font-size: 2em; */
+      width: 1em;
+      border: 1px solid red;
+      line-height: 2em;
+    }
+
+    /* .s1 {
+      font-size: 2em;
+      line-height: 2em;
+    } */
+
+    /* .p2 {
+      font-size: 16px;
+      line-height: 2;
+    } */
+
+    /* .s5 {
+      font-size: 2em;
+    } */
+
+    /* .s6 {
+      font-size: 2em;
+      line-height: 2em;
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="p1">
+    <div class="s1">1</div>
+    <div class="s2">1</div>
+  </div>
+  <!-- <div class="p2">
+    <div class="s5">1</div>
+    <div class="s6">1</div>
+  </div> -->
+</body>
+
+</html>

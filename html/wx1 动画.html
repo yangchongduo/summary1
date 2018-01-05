@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>微信</title>
+  <style type="text/css">
+    html,
+    body {
+      padding: 0;
+      margin: 0;
+    }
+
+    .self {
+
+      /* width: 100px;
+      height: 100px;
+      background: darkgray; */
+      /* 过程动画需要事件  */
+      /* animation: move 5s; */
+      /* 哪个属性过程动画 多长事件 什么运行方式 形变一共需要多长时间 */
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      /* 是帧动画 */
+      /* 过程动画 可以自己适应 */
+      /* transform-origin: 0% 0%; */
+      /* transition: all 1s linear 0s; */
+      /* transition: 1s width linear 0s, 1s height linear 1s; */
+      /* 总共需要的时间  */
+      /* transition: 1s ; */
+      /* transtate */
+      position: relative;
+      left: -200px;
+      width: 200px;
+      height: 100px;
+      background: red;
+      transition: all 1s linear 0s;
+    }
+
+    /* .self { */
+
+    /* transition */
+
+    /* } */
+
+    /* div:hover { */
+
+    /* 只要发生变化就动画就会自动执行 */
+
+    /* width: 200px; */
+
+    /* height: 200px; */
+
+    /* all 所有的 */
+
+    /* transform: scaleX(2); */
+
+    /* transform: translate(); */
+
+    /* transition: scale(2); */
+
+    /* transform:*/
+
+    /* } */
+  </style>
+</head>
+
+<body>
+  <div id="div"></div>
+  <div class="self">确认立即删除吗？</div>
+  <button id="button">button</button>
+  <!-- <div style="width:200px"></div> -->
+  <!-- <div style="width:300px"></div> -->
+</body>
+
+</html>
+<script>
+  var button = document.getElementById('button');
+  button.onclick = function () {
+    document.getElementsByClassName('self')[0].style.left = '0px';
+  }
+
+</script>

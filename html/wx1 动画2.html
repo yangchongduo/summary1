@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .center {
+      width: 100px;
+      height: 100px;
+      background: darkgrey;
+      /* 过程动画  transform 只是其中的一种 还可以包含其他的*/
+      transform-origin: 0% 0%;
+      transition: 1s linear;
+      animation: name duration timing-function delay iteration-count direction fill-mode;
+      /* transition: ; */
+    }
+
+    /* .center:hover {
+      transform: scale(2)
+    } */
+  </style>
+</head>
+
+<body>
+  <div class="center"></div>
+</body>
+
+</html>
+<script>
+  const center = document.getElementsByClassName('center')[0];
+  center.addEventListener('click', function () {
+    // this.style.transformD
+    this.style.transform = 'scale(2)';
+  }, false)
+</script>

@@ -61,6 +61,10 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
+bootstrap@^3.3.7:
+  version "3.3.7"
+  resolved "http://registry.npm.taobao.org/bootstrap/download/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
+
 brace-expansion@^1.1.7:
   version "1.1.8"
   resolved "http://registry.npm.taobao.org/brace-expansion/download/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
@@ -144,6 +148,10 @@ delayed-stream@~1.0.0:
 diff@3.3.1, diff@^3.1.0:
   version "3.3.1"
   resolved "http://registry.npm.taobao.org/diff/download/diff-3.3.1.tgz#aa8567a6eed03c531fc89d3f711cd0e5259dec75"
+
+dragsort@^1.0.4:
+  version "1.0.4"
+  resolved "http://registry.npm.taobao.org/dragsort/download/dragsort-1.0.4.tgz#d9dba8cbf4a3bb71ed76c992a6fe3894ff7a9be3"
 
 ecc-jsbn@~0.1.1:
   version "0.1.1"
@@ -256,6 +264,14 @@ hoek@4.x.x:
   version "4.2.0"
   resolved "http://registry.npm.taobao.org/hoek/download/hoek-4.2.0.tgz#72d9d0754f7fe25ca2d01ad8f8f9a9449a89526d"
 
+html-webpack-local-cache-plugin@^1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/html-webpack-local-cache-plugin/download/html-webpack-local-cache-plugin-1.0.1.tgz#bc8abc0478662f935d14fbbd21b4b82058309e59"
+
+html-webpack-localstorage-plugin@^0.1.3:
+  version "0.1.3"
+  resolved "http://registry.npm.taobao.org/html-webpack-localstorage-plugin/download/html-webpack-localstorage-plugin-0.1.3.tgz#8237f6a036ed4d0148634190bca5db612906d464"
+
 http-signature@~1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/http-signature/download/http-signature-1.2.0.tgz#9aecd925114772f3d95b65a60abb8f7c18fbace1"
@@ -328,7 +344,7 @@ lodash.get@^4.4.2:
   version "4.4.2"
   resolved "http://registry.npm.taobao.org/lodash.get/download/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
 
-lodash@^4.13.1:
+lodash@^4.13.1, lodash@^4.17.4:
   version "4.17.4"
   resolved "http://registry.npm.taobao.org/lodash/download/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -569,6 +585,10 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
+
+vue-select@^1.3.3:
+  version "1.3.3"
+  resolved "http://registry.npm.taobao.org/vue-select/download/vue-select-1.3.3.tgz#2b334326769a2c8bf8b2c802c6323a8305a9ea0f"
 
 vue@^2.5.8:
   version "2.5.8"

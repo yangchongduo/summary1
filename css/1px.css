@@ -1,0 +1,18 @@
+.par{
+  position: relative;
+}
+
+.par::after {
+  content: '';
+  position: absolute;
+  border: 1px solid red;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 200%;
+  height: 200%;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+

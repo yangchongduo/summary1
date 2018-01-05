@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>footer1</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		/* 第一种方式 */
+
+		html {
+			min-height: 100%;
+			position: relative;
+		}
+
+		/* 第二种方式 */
+
+		/* html {
+			height: 100%
+		} */
+
+		/* body {
+			min-height: 100%;
+			position: relative;
+		} */
+
+		.header {
+			height: 100px;
+			background: darkgoldenrod;
+		}
+
+		.section {
+			display: block;
+			padding-bottom: 100px;
+			background: darkcyan;
+		}
+
+		.footer {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			height: 100px;
+			background: darkgray;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="header"></header>
+	<section class="section">222</section>
+	<footer class="footer"></footer>
+</body>
+
+</html>
