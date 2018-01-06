@@ -23,6 +23,7 @@
     "dragsort": "^1.0.4",
     "html-webpack-local-cache-plugin": "^1.0.1",
     "html-webpack-localstorage-plugin": "^0.1.3",
+    "inquirer": "^4.0.2",
     "lodash": "^4.17.4",
     "mocha": "^4.0.1",
     "node-fetch": "^1.7.3",
