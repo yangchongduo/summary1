@@ -483,6 +483,7 @@ function easeOutExpo(t, b, c, d) {
  * @param mask
  * @returns {*}
  */
+
 Date.prototype.format = function (mask) {
   let d = this;
   let zeroize = function (value, length) {

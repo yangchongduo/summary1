@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100%;
+      /* width: 500px; */
+      height: 400px;
+
+      /* display: grid; */
+      display: inline-grid;
+      /* border: 1px solid red; */
+      /* 每一行高度  */
+      /* grid-template-rows: 40% 100px auto; */
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: 30px repeat(3, 1fr) 30px;
+      grid-gap: 30px 100px;
+      /* grid-column-gap:30px; */
+      /* grid-row-gap:100px; */
+      /* grid-template-columns: repeat(2, 1fr);  */
+      /* grid-template-columns: minmax(auto, 50%) 1fr 3em; */
+      /* grid-template-columns: 100px auto 100px; */
+      /* 每一列的宽度 */
+      /* grid-template-columns: 40px 50px auto 50px 40px;
+      grid-template-rows: 25% 100px auto; 每一
+       */
+    }
+
+    .item {
+      border: 1px solid darkgrey;
+      /* width: 100px; */
+      /* height: 100px; */
+    }
+
+    .item-1 {
+      border: 1px solid darkgreen;
+    }
+
+    .item-2 {
+      border: 1px solid darkmagenta;
+    }
+
+    .item-3 {
+      border: 1px solid darkorange;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+  </div>
+</body>
+
+</html>
