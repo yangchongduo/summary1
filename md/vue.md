@@ -182,3 +182,46 @@ function patch(oldVnode, vnode, hydrating, removeOnly, parentElm, refElm) {
 ```
 
 
+
+### Vue源码的主体思路
+
+    Vue的源码结构分为两个部分：
+
+    全局设计：包括全局接口、默认选项等
+    vm 实例设计：包括接口设计 (vm 原型)、实例初始化过程设计 (vm 构造函数)
+    Vue建立的MVVM模型主要是做了三点：
+
+    通过observer对data进行数据监听
+    把template解析成document fragment,解析其中directive，得到每一个 directive所依赖的数据项及其更新方法
+    通过watcher把上述两部分结合起来，把 directive中的数据依赖订阅在对应数据的 observer上，当数据变化的时候，就会触发 observer，进而触发相关依赖对应的视图更新方法，最后达到模板原本的关联效果。
+    所以Vue建立的VM模型的核心就是observer, directive (parser), watcher
+
+    Vue构造函数
+
+    Vue构造函数的实现在src/core/instance/index.js目录下：
+
+    最开始先执行_init方法构造出空原型
+    然后通过init.js,state.js,render.js events.js以及lifecycle.js引入五个mixin方法在Vue原型的prototype上挂载方法和属性（包括生命周期）
+    之后再引入initGlobalAPI和isServerRendering在prototype上挂载静态属性和方法以及SSR环境判断
+    接下来覆盖Vue.config的属性，将其设置为平台特有的一些方法
+    设置Vue.options.directives和Vue.options.components安装平台特有的指令和组件
+    在Vue.prototype上定义__patch__和$mount
+
+    MVVM模型
+
+    我们都知道Vue的双向数据绑定采用的是发布者-订阅者模式，其中发布者对应的是observer.js，订阅者对应的是compile.js
+
+    observer.js
+
+    observer.js所做的事情就是在生命周期beforeCreate和created之间对data所有属性进行遍历，并为其添加setter和getter方法，根据__ob__属性来标记是否被观察，然后为每个属性添加订阅器Dep，Dep的作用就是ovserver观察到数据变动通知到Dep，Dep负责去通知Watcher来执行数据变化相应操作
+
+    compile.js
+
+    compile.js会编译挂载的根元素el，然后初始化视图，触发data的属性getter生成Watcher，并将Watcher添加到属性的订阅者数组中。在遍历节点的时候会将节点上的指令和事件解析出来，然后进入到Watcher的实例化流程，Watcher中的this会赋值给Dep.target，其中Dep静态属性Dep.target会对应订阅者数组中的目标
+
+###【Vue.nextTick使用场景】
+
+    在做推荐位商品的时候有一个曝光埋点的需求，在组件初始化的时候要默认发送一次visible事件，但在created方法内无法通过refs获取到dom，在查阅文档和资料后发现在Vue生命周期的created()钩子函数进行的DOM操作要放在Vue.nextTick()的回调函数中，原因是在created()钩子函数执行的时候DOM 其实并未进行任何渲染，而此时进行DOM操作无异于徒劳，所以此处要将DOM操作的js代码放进Vue.nextTick()的回调函数中。与之对应的就是mounted钩子函数，因为该钩子函数执行时所有的DOM挂载和渲染都已完成，此时在该钩子函数中进行任何DOM操作都不会有问题 。在数据变化后要执行的某个操作，而这个操作需要使用随数据改变而改变的DOM结构的时候，这个操作都应该放进Vue.nextTick()的回调函数中。
+
+
+

@@ -15,18 +15,22 @@
     .container {
       width: 100%;
       /* width: 500px; */
+      /* 父级的高度为400px  grid-template-rows 就可以等分*/
       height: 400px;
-
       /* display: grid; */
       display: inline-grid;
       /* border: 1px solid red; */
       /* 每一行高度  */
       /* grid-template-rows: 40% 100px auto; */
-      grid-template-rows: repeat(3, 1fr);
+      /* 父级的高度问题分成等比几分 */
+      /* grid-template-rows: repeat(3, 1fr); */
+      grid-template-rows: repeat(2, 1fr);
+      /* 这样就可以规定几个有这样的元素了 */
       grid-template-columns: 30px repeat(3, 1fr) 30px;
-      grid-gap: 30px 100px;
-      /* grid-column-gap:30px; */
+      /* grid-template:  repeat(2, 1fr)  */
+      /* grid-column-gap: 30px; */
       /* grid-row-gap:100px; */
+      /* grid-gap: 30px 100px; */
       /* grid-template-columns: repeat(2, 1fr);  */
       /* grid-template-columns: minmax(auto, 50%) 1fr 3em; */
       /* grid-template-columns: 100px auto 100px; */
@@ -38,6 +42,10 @@
 
     .item {
       border: 1px solid darkgrey;
+      /* grid-template-columns: ; */
+      /* grid-template-rows: ; */
+      /* grid-row */
+      /* display: -ms-inline-grid */
       /* width: 100px; */
       /* height: 100px; */
     }

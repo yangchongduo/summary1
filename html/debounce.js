@@ -3,6 +3,7 @@ var container = document.getElementById('container');
 
 /**
  * setTimeout的定时器值推荐最小使用16.7ms
+ * 人类的最大识别是 60帧 如果再大就无法 无法识别 1000/60 =  16.7;
  */
 function getUserAction() {
   // 触发的次数太多了   设置一个时间 在这个时间内不会在触发，在这个时间内的话
