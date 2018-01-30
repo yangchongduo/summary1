@@ -26,3 +26,11 @@
 	② If-Unmodified-Since: 处理方式与上相反
 	③ If-Match: 缓存校验字段, 值为唯一标识请求资源的字符串, 即上次收到的ETag值
 	④ If-None-Match: 处理方式与上相反
+
+
+#### 缓存
+
+	1、设置expries 之后 max-age:1000 (from disk cache) 文件过大就会放在磁盘中
+	2、文件比较小：200 OK (from memory cache) 是内存中
+	3、以上都不会真实的到服务器中
+	

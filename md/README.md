@@ -625,15 +625,16 @@ http://wenku.baidu.com/link?url=VyCe57r1RaWV9YsldWQ3CscefZ2oW5GkoNH3Qp4zwwAMse7q
             
             
 ##### es6 prxoy（外部到内容的修改）  decorate（从外部一层一层的修饰）不适用继承的方式
---------------------------------
-                           使用 ES6 Proxy 我们就可以实现真实的私有变量了 _xxx:xxx这样就可以实现私有   
-                      1：抽离校验模块 3. 访问日志 预警和拦截  过滤操作    
-                      场景: 拦截 给出提示， get obj={name:xx}, get age 没有一般是 undefined 可以throw error   
-                                set 年龄 设置 对数据的检测 age='string' 这是no的   
-                               vue 使用 proxy 对数据拦截 给出提示   
-                               https://segmentfault.com/a/1190000008303003  
-                               http://pinggod.com/2016/%E5%AE%9E%E4%BE%8B%E8%A7%A3%E6%9E%90-ES6-Proxy-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/
-                               
+
+
+        使用 ES6 Proxy 我们就可以实现真实的私有变量了 _xxx:xxx这样就可以实现私有   
+    1：抽离校验模块 3. 访问日志 预警和拦截  过滤操作    
+    场景: 拦截 给出提示， get obj={name:xx}, get age 没有一般是 undefined 可以throw error   
+    set 年龄 设置 对数据的检测 age='string' 这是no的   
+    vue 使用 proxy 对数据拦截 给出提示   
+    https://segmentfault.com/a/1190000008303003  
+            http://pinggod.com/2016/%E5%AE%9E%E4%BE%8B%E8%A7%A3%E6%9E%90-ES6-Proxy-%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF/
+            
           业务场景 : 对一个id 请求一次 缓存 ，然后 代理对象 请求过 不在请求 从缓存中获取  
           假设你想要阻止任何人删除属性 noDelete, 想要让那些调用 oldMethod 的用户知道它已经被弃用了, 
           还想要阻止任何人修改 doNotChange 属性。下面           
@@ -867,7 +868,7 @@ CSS 相关问题
 
 ###介绍一下CSS的盒子模型？
 
-    1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content部分包含了 border 和 pading;
+    1）有两种， IE 盒子模型、标准 W3C 盒子模型；IE的content（宽度和高度）部分包含了 border 和 pading;
     
     2）盒模型： 内容(content)、填充(padding)、边界(margin)、 边框(border).
 
@@ -1003,7 +1004,9 @@ html部分
     
     （3）、在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。
     
-    （4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。   
+    （4）、DOCTYPE不存在或格式不正确会导致文档以混杂模式呈现。  
+    （5）、 <!DOCTYPE> 声明不是 HTML 标签；它是指示 web 浏览器关于页面使用哪个 HTML 版本进行编写的指令
+
 ###你知道多少种Doctype文档类型？
 
      该标签可声明三种 DTD 类型，分别表示严格版本、过渡版本以及基于框架的 HTML 文档。

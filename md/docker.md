@@ -1,4 +1,14 @@
-```docker优势
+#### docker使用
+
+- 开发环境只承载环境，log和代码隐射到外面
+- 测试环境和线上环境需要承载代码镜像
+- 通过image version版本控制;
+
+
+#### 首先，Kitematic 是一个 Docker GUI，配置非常方便。 
+
+#### docker优势
+```
 节省资源。
            现状：公司服务运行在阿里云的ECS上，如果引入docker，会变成docker on vm上，无自有机房很难实现
       
@@ -14,6 +24,7 @@
       开发环境和测试环境是极力推广的。如线上通过docker部署，就不会出现‘环境’这样问题。
       前端开发环境本身依赖node即可，现阶段不予以接入。
  ```
+
 ### 构建image
 ### docker build -t mynodeapp . 
 ### docker images
@@ -25,6 +36,7 @@
 ### 如何通过数据卷映射到镜像外面   ? 
 ### docker内部的文件到底是做什么的?  
 #### [docker搭建node服务](http://www.jb51.net/article/91772.htm)
+
 >1 创建Dockerfile文件 vi Dockerfile
 ```
 FROM node   // 基础镜像

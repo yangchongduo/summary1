@@ -59,12 +59,31 @@ Alt + u ：从光标处更改为全部大写的单词
 Alt + l ：从光标处更改为全部小写的单词
 Ctrl + t ：交换光标处和之前的字符
 Alt + t ：交换光标处和之前的单词
-sudo lsof -i tcp:port 某一个端口号
+*** sudo lsof -i tcp:port 某一个端口号
+*** sudo lsof -i -P | grep 15764 （pid）
+node      15764   yangchongduo   15u  IPv6 0x4fe7b6eaba5c84f5      0t0    TCP *:3000 (LISTEN)
 Alt + Backspace：与 Ctrl + w ~~相同~~类似，分隔符有些差别 [感谢 rezilla 指正]
+显示当前目录所有文件大小的命令ls -lht
 ```
-sudo apt-get install htop    
-htop    
- 
+
+sudo apt-get install htop      
+htop      
+
+### 删除服务器 默认的apache2服务
+
+    sudo apt-get purge apache2
+
+#### 如何查看哪个文件内存最大
+
+```
+df -h
+比如是/很满
+cd /
+du -sh *
+就可以看出哪个文件夹大，重复上面一步即可
+```
+
+笨了点的方法
 #### 1、cd命令
 用于`切换当前目录`，它的参数是要切换到的目录的路径，可以是绝对路径，也可以是相对路径
 ```

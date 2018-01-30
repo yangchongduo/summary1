@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+    <title>菜鸟教程(runoob.com)</title>
+</head>
+
+<body>
+
+  <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+    您的浏览器不支持 HTML5 canvas 标签。
+  </canvas>
+
+</body>
+
+</html>
+<script>
+  var c = document.getElementById("myCanvas");
+  // 然后，创建 context 对象：
+  var ctx = c.getContext("2d");
+  // ctx.fillStyle = "#FF0000";
+  //  矩形填充
+  // ctx.fillRect(10, 0, 2000, 75);
+  /**
+  绘制线
+  */
+  // ctx.moveTo(0, 0);
+  // ctx.lineTo(200, 100);
+  // ctx.stroke();
+  /**
+  园
+  */
+  // ctx.beginPath();
+  // ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+  // ctx.stroke();
+
+  // 文本
+  // ctx.font = "30px Arial";
+  // ctx.fillText("Hello World", 0, 50);
+  // var gradient = ctx.createLinearGradient(0, 0, 170, 0);
+  // gradient.addColorStop("0", "magenta");
+  // gradient.addColorStop("0.5", "blue");
+  // gradient.addColorStop("1.0", "red");
+  // ctx.strokeStyle = gradient;
+  // ctx.lineWidth = 5;
+  // strokeRect 笔触一个矩形
+  // ctx.strokeRect(10, 10, 100, 50);
+  // ctx.strokeText("Big smile!", 10, 50);
+  // ctx.shadowBlur = 20;
+  // ctx.shadowColor = "black";
+
+  ctx.shadowBlur = 20;
+  ctx.shadowColor = "black";
+
+  var gradient = ctx.createLinearGradient(0, 0, 170, 0);
+  gradient.addColorStop("0", "magenta");
+  gradient.addColorStop("0.5", "blue");
+  gradient.addColorStop("1.0", "red");
+  ctx.strokeStyle = gradient;
+  ctx.lineWidth = 5;
+  // strokeRect 笔触一个矩形
+  ctx.strokeRect(10, 10, 100, 50);
+  // ctx.fillStyle = "red";
+  // ctx.fillRect(20, 20, 100, 80)
+</script>
