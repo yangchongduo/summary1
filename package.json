@@ -1,0 +1,20 @@
+{
+  "name": "summary1",
+  "version": "1.0.0",
+  "description": "![system overview](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/yangchongduo/summary/master/overview.uml)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yangchongduo/summary1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yangchongduo/summary1/issues"
+  },
+  "homepage": "https://github.com/yangchongduo/summary1#readme"
+}
